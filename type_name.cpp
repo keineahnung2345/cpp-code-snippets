@@ -1,11 +1,3 @@
-/******************************************************************************
-
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
 #include <iostream>
 #include <type_traits>
 #include <typeinfo>
@@ -49,10 +41,10 @@ type_name()
 
 int main()
 {
-    char c = 'c';
+    string s = "abc";
     //method1: output "Ss"
-    cout << typeid(string(1, c)).name() << endl;
+    cout << typeid(s).name() << endl;
     //method2: output "std::string"
-    cout << type_name<decltype(string(1, c))>() << endl;
+    cout << type_name<decltype(s)>() << endl;
     return 0;
 }
