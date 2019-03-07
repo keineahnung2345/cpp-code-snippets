@@ -31,8 +31,8 @@ int main()
 {
     char arrA[] = {'A', 'B', 'C'};
     int arrB[] = {1, 4, 6, 2, 1};
-    cout << get_length(arrA) << endl; //8
-    cout << get_length(arrB) << endl; //2
+    cout << get_length(arrA) << endl; //8, wrong!
+    cout << get_length(arrB) << endl; //2, wrong!
     cout << size(arrA) << endl; //3
     cout << size(arrB) << endl; //5
     return 0;
