@@ -8,7 +8,7 @@ using namespace std;
 //https://stackoverflow.com/questions/34052948/printing-any-stl-container
 template<template<typename, typename...> class TT, typename... Args>
 void output_container(TT<Args...> const &cont){
-    for(auto elem : cont) cout << elem << " ";
+    for(auto elem : cont) cout << "'" << elem << "'" << " ";
     cout << endl;
 }
 
