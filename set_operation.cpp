@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
     set<char> s1, s2;
-    vector<char> v(10);
+    vector<char> v(10); //need to reserve places
     vector<char>::iterator v_it;
     
     s1.insert('a');
@@ -23,6 +23,7 @@ int main()
     
     cout << "intersection:" << endl;
     v_it = set_intersection(s1.begin(), s1.end(), s2.begin(), s2.end(), v.begin());
+    //resize it to retain only the meaningful values
     v.resize(v_it-v.begin());
     for(auto e : v){
         cout << e << " ";
