@@ -1,6 +1,6 @@
 #include <iostream>
 #include <type_traits>
-#include <typeinfo>
+#include <typeinfo> //typeid
 #ifndef _MSC_VER
 #   include <cxxabi.h>
 #endif
