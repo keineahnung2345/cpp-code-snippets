@@ -5,8 +5,10 @@
 
 using namespace std;
 
+//original version's argument is const vector<T>& v
+//here remove & so that v won't be modified
 template <typename T>
-vector<size_t> sort_indexes(const vector<T> &v) {
+vector<size_t> sort_indexes(const vector<T> v) {
   // initialize original index locations
   vector<size_t> idx(v.size());
   iota(idx.begin(), idx.end(), 0);
@@ -20,11 +22,11 @@ vector<size_t> sort_indexes(const vector<T> &v) {
 
 int main()
 {
-    vector<string> v = {"ABC", "DE", "a", "happy", "harry", "f"};
-    sort_indexes(v);
-    for(auto e : v){
-        cout << e << " ";
+    vector<string> v = {"happy", "ABC", "f", "DE", "a", "harry"};
+    vector<size_t> ixs = sort_indexes(v);
+    
+    for(int i = 0; i < (int)v.size(); i++){
+        cout << ixs[i] << " th smallest: " <<  v[i] << endl;
     }
-    cout << endl;
     return 0;
 }
