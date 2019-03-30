@@ -13,7 +13,7 @@ int main()
     stk.push(9);
     stk.push(3);
     
-    int* end   = &stk.back() + 1;
+    int* end   = &stk.top() + 1;
     int* begin = end - stk.size();
     vector<int> stack_contents(begin, end);
     
