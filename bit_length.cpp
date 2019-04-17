@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+//https://stackoverflow.com/questions/29388711/c-how-to-get-length-of-bits-of-a-variable
 int main() {
 	unsigned int bits;
 	int ox;
