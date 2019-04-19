@@ -6,9 +6,9 @@ int main()
 {
     string s = "abc";
     
-    cout << (s=="abc") << endl;
-    cout << (s=="bac") << endl;
-    cout << (s=="d") << endl;
+    cout << (s=="abc") << endl; //1
+    cout << (s=="bac") << endl; //0
+    cout << (s=="d") << endl; //0
     
     cout << string("hello").compare("world") << endl; //-15
     cout << string("A").compare("Ab") << endl; //-1
