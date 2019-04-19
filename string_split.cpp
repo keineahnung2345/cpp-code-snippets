@@ -20,3 +20,9 @@ int main()
     return 0;
 }
 
+/**
+output: 
+scott
+tiger
+mushroom
+**/
