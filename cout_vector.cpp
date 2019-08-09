@@ -1,7 +1,7 @@
 //from https://stackoverflow.com/questions/10750057/how-to-print-out-the-contents-of-a-vector
 #include <iostream>
-#include <algorithm>
-#include <iterator>
+#include <algorithm> //sort
+#include <iterator> //ostream_iterator
 #include <vector>
 
 int main() {
