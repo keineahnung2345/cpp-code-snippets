@@ -4,6 +4,17 @@ Some useful C++ code snippets
 ## Compile
 [Compiling with g++](https://www.geeksforgeeks.org/compiling-with-g-plus-plus/)
 
+## list the .so dependencies of a executable file
+```sh
+ldd <executable>
+```
+Sample output:
+```
+	libudev.so.1 => /lib/x86_64-linux-gnu/libudev.so.1 (0x00007fc3364fd000)
+	libsoxr.so.0 => /usr/lib/x86_64-linux-gnu/libsoxr.so.0 (0x00007fc336297000)
+	libnuma.so.1 => /usr/lib/x86_64-linux-gnu/libnuma.so.1 (0x00007fc33608c000)
+```
+
 ## list symbols from xxx.so
 ```sh
 nm -D <xxx.so> # -D will list dynamic symbols
