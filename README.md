@@ -52,3 +52,17 @@ First set `LD_LIBRARY_PATH` to the path of that `.so` file, and then add:
 link_directories( $ENV{LD_LIBRARY_PATH} )
 ```
 into `CMakeLists.txt`.
+
+## specify CUDA path while cmake
+[How to let cmake find CUDA](https://stackoverflow.com/questions/19980412/how-to-let-cmake-find-cuda)
+
+Method 1, use `-D` flag while `cmake`:
+```sh
+cmake -D CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda ..
+```
+
+Method 2, revise `CMakeLists.txt`, before `FIND_PACKAGE(CUDA)`, add one line, this becomes:
+```
+set(CUDA_TOOLKIT_ROOT_DIR /usr/local/cuda)
+FIND_PACKAGE(CUDA)
+```
