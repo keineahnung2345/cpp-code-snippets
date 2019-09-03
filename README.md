@@ -37,3 +37,18 @@ This is helpful for solving the following error:
 ```sh
 c++filt <symbol(mangled name)>
 ```
+
+## /usr/bin/ld: cannot find -l\<xxx>
+Error message while linking:
+```
+/usr/bin/ld: cannot find -lcudnn
+collect2: error: ld returned 1 exit status
+```
+Solution:
+[https://stackoverflow.com/questions/51451746/cmake-command-line-ld-library-path-and-c-include-dirs](https://stackoverflow.com/questions/51451746/cmake-command-line-ld-library-path-and-c-include-dirs)
+
+First set `LD_LIBRARY_PATH` to the path of that `.so` file, and then add:
+```
+link_directories( $ENV{LD_LIBRARY_PATH} )
+```
+into `CMakeLists.txt`.
