@@ -10,6 +10,7 @@ int main() {
 	
 	size_t pos = s.find(toReplace);
 	//replace the first occurence
+	//NOTE THAT C++ string replace is IN-PLACE!!!
 	s.replace(pos, toReplace.length(), newText);
 	
 	cout << "new string: " << s << endl; //new string: this sentence contains a word newtext!
