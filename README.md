@@ -4,6 +4,11 @@ Some useful C++ code snippets
 ## Compile
 [Compiling with g++](https://www.geeksforgeeks.org/compiling-with-g-plus-plus/)
 
+### Compile, including opencv headers and libraries
+```sh
+g++ xxx.cpp `pkg-config --cflags --libs opencv`
+```
+
 ## list the .so dependencies of a executable file
 ```sh
 ldd <executable>
