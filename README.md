@@ -4,6 +4,12 @@ Some useful C++ code snippets
 ## Compile
 [Compiling with g++](https://www.geeksforgeeks.org/compiling-with-g-plus-plus/)
 
+### Compile, specify c++ version
+[to_string is not a member of std, says g++ (mingw)](https://stackoverflow.com/questions/12975341/to-string-is-not-a-member-of-std-says-g-mingw)
+```sh
+g++ xxx.cpp -std=c++11
+```
+
 ### Compile, including opencv headers and libraries
 [compiling opencv in c++](https://stackoverflow.com/questions/9094941/compiling-opencv-in-c)
 ```sh
