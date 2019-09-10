@@ -5,6 +5,7 @@ Some useful C++ code snippets
 [Compiling with g++](https://www.geeksforgeeks.org/compiling-with-g-plus-plus/)
 
 ### Compile, including opencv headers and libraries
+[compiling opencv in c++](https://stackoverflow.com/questions/9094941/compiling-opencv-in-c)
 ```sh
 g++ xxx.cpp `pkg-config --cflags --libs opencv`
 ```
