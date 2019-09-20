@@ -16,6 +16,12 @@ g++ xxx.cpp -std=c++11
 g++ xxx.cpp `pkg-config --cflags --libs opencv`
 ```
 
+### make in verbose mode
+[Using CMake with GNU Make: How can I see the exact commands?](https://stackoverflow.com/questions/2670121/using-cmake-with-gnu-make-how-can-i-see-the-exact-commands)
+```sh
+make VERBOSE=1
+```
+
 ## list the .so dependencies of a executable file
 ```sh
 ldd <executable>
