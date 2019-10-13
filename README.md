@@ -10,6 +10,22 @@ Some useful C++ code snippets
 g++ xxx.cpp -std=c++11
 ```
 
+### CMakeLists.txt fundamental
+
+```
+cmake_minimum_required(VERSION 3.5)
+project(name)
+set(CMAKE_CXX_STANDARD 14)
+find_package(OpenCV REQUIRED)
+set(SOURCE_FILES ./src/file1.cpp ./src/file2.cpp)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+link_directories(${CMAKE_SOURCE_DIR}/libs)
+add_executable(<executable_file_name> ./src/main.cpp)
+target_link_libraries(<executable_file_name> ${OpenCV_LIBS})
+```
+
+Ref: [Configuring an c++ OpenCV project with Cmake](https://stackoverflow.com/questions/13970377/configuring-an-c-opencv-project-with-cmake)
+
 ### make in verbose mode
 [Using CMake with GNU Make: How can I see the exact commands?](https://stackoverflow.com/questions/2670121/using-cmake-with-gnu-make-how-can-i-see-the-exact-commands)
 ```sh
