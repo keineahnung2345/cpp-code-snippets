@@ -10,12 +10,6 @@ Some useful C++ code snippets
 g++ xxx.cpp -std=c++11
 ```
 
-### Compile, including opencv headers and libraries
-[compiling opencv in c++](https://stackoverflow.com/questions/9094941/compiling-opencv-in-c)
-```sh
-g++ xxx.cpp `pkg-config --cflags --libs opencv`
-```
-
 ### make in verbose mode
 [Using CMake with GNU Make: How can I see the exact commands?](https://stackoverflow.com/questions/2670121/using-cmake-with-gnu-make-how-can-i-see-the-exact-commands)
 ```sh
