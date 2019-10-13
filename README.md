@@ -10,7 +10,8 @@ Some useful C++ code snippets
 g++ xxx.cpp -std=c++11
 ```
 
-### CMakeLists.txt fundamental
+### CMakeLists.txt
+#### fundamental
 
 ```
 cmake_minimum_required(VERSION 3.5)
@@ -25,6 +26,15 @@ target_link_libraries(<executable_file_name> ${OpenCV_LIBS})
 ```
 
 Ref: [Configuring an c++ OpenCV project with Cmake](https://stackoverflow.com/questions/13970377/configuring-an-c-opencv-project-with-cmake)
+
+#### set variable and print
+[CMake: Output a list with delimiters](https://stackoverflow.com/questions/17666003/cmake-output-a-list-with-delimiters)
+```
+set(VAR1 hello)
+set(LIST1 a b c d)
+message("the variable VAR1 is " ${VAR1})
+message("the list LIST1 is " "${LIST1}")
+```
 
 ### make in verbose mode
 [Using CMake with GNU Make: How can I see the exact commands?](https://stackoverflow.com/questions/2670121/using-cmake-with-gnu-make-how-can-i-see-the-exact-commands)
