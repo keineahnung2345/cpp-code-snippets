@@ -38,3 +38,5 @@ target_link_libraries(<exeutable_file_name>  ${OpenCV_LIBS})
 # should copy /usr/local/include/opencv4/opencv2 into ${PROJECT_SOURCE_DIR}/include
 target_include_directories(<exeutable_file_name> PUBLIC ${PROJECT_SOURCE_DIR}/include)
 ```
+
+Ref: [CMake link to external library](https://stackoverflow.com/questions/8774593/cmake-link-to-external-library)
