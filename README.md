@@ -21,8 +21,14 @@ find_package(OpenCV REQUIRED)
 set(SOURCE_FILES ./src/file1.cpp ./src/file2.cpp)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 link_directories(${CMAKE_SOURCE_DIR}/libs)
+
+# create a executable file
 add_executable(<executable_file_name> ./src/main.cpp)
 target_link_libraries(<executable_file_name> ${OpenCV_LIBS})
+
+# create a shared object
+add_library(<library_name> SHARED ${SOURCE_FILES})
+target_link_libraries(<library_name> ${OpenCV_LIBS})
 ```
 
 Ref: [Configuring an c++ OpenCV project with Cmake](https://stackoverflow.com/questions/13970377/configuring-an-c-opencv-project-with-cmake)
