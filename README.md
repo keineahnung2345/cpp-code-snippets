@@ -112,3 +112,12 @@ Method 2, revise `CMakeLists.txt`, before `FIND_PACKAGE(CUDA)`, add one line, th
 set(CUDA_TOOLKIT_ROOT_DIR /usr/local/cuda)
 FIND_PACKAGE(CUDA)
 ```
+
+## specify OpenCV path while cmake
+```
+set(OpenCV_DIR /usr/local/lib/cmake/opencv4) # set to system installation directory
+set(OpenCV_DIR ~/installation/opencv-4.1.2/build) # set to opencv build directory
+FIND_PACKAGE(OpenCV REQUIRED)
+```
+
+Another method: [cmake find_package specify path](https://stackoverflow.com/questions/49816206/cmake-find-package-specify-path)
