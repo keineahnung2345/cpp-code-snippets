@@ -44,11 +44,14 @@ message("the list LIST1 is " "${LIST1}")
 
 Other types of variable: [What's the CMake syntax to set and use variables?](https://stackoverflow.com/questions/31037882/whats-the-cmake-syntax-to-set-and-use-variables)
 
-### make in verbose mode
+### cmake in debug mode and make in verbose mode
 [Using CMake with GNU Make: How can I see the exact commands?](https://stackoverflow.com/questions/2670121/using-cmake-with-gnu-make-how-can-i-see-the-exact-commands)
 ```sh
-make VERBOSE=1
+cmake -DCMAKE_BUILD_TYPE=DEBUG ..
+make VERBOSE=1 2>../log.txt
 ```
+
+The `2>../log.txt` redirect error message into a log file.
 
 ## list the .so dependencies of a executable file
 ```sh
