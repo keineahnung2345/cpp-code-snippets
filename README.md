@@ -16,6 +16,11 @@ This solves the error:
  #error This file requires compiler and library support \
 ```
 
+### specify include directory
+```sh
+g++ xxx.cpp -I /usr/local/include
+```
+
 ### CMakeLists.txt
 #### fundamental
 
