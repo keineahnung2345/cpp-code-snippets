@@ -7,6 +7,13 @@ compile, including opencv headers and libraries
 g++ xxx.cpp `pkg-config --cflags --libs opencv`
 ```
 
+If the above fails, use the following:
+```sh
+g++ xxx.cpp -I /usr/local/include/opencv4 -L /usr/local/lib -lopencv_imgcodecs -lopencv_core -std=c++11
+```
+
+In `xxx.cpp`, it includes `opencv2/imgcodecs.hpp`, so we need to link with `opencv_imgcodecs` and `opencv_core`.
+
 ## cmake
 ### use OpenCV after installing
 To use OpenCV, add the following in `CMakeLists.txt`:
