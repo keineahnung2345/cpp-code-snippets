@@ -33,6 +33,13 @@ sudo make install
 ```
 
 ## use it in another project
+### g++
+```sh
+g++ xxx.cpp -L /usr/local/lib -ldlib -lcblas -llapack -std=c++11
+```
+`/usr/lib/libcblas.so` and `/usr/lib/liblapack.so` are required by dlib.
+
+### cmake
 Reference to [Build Dlib on Windows](https://medium.com/beesightsoft/build-dlib-on-windows-534209e8340a).
 
 In CMakeLists.txt:
