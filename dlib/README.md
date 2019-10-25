@@ -33,13 +33,14 @@ sudo make install
 ```
 
 ## use it in another project
+Reference to [Build Dlib on Windows](https://medium.com/beesightsoft/build-dlib-on-windows-534209e8340a).
+
 In CMakeLists.txt:
 ```
 FIND_PACKAGE(dlib REQUIRED)
 # if it fails, use:
 #set(dlib_DIR /usr/local/lib)
 #FIND_PACKAGE(dlib REQUIRED ${dlib_DIR})
-
 
 add_executable(<exe_name> <src_files>)
 target_link_libraries(<exe_name> dlib::dlib)
