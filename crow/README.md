@@ -15,3 +15,19 @@ cd build
 cmake ..
 make
 ```
+
+## use it in another project
+Reference to [undefined reference to symbol 'pthread_sigmask@@GLIBC_2.2.5' 解决方法](https://blog.csdn.net/DONGHUIB/article/details/82824011).
+
+In CMakeLists.txt:
+```
+find_package(Threads)
+
+include_directories(/home/jian/Documents/crow/amalgamate)
+# boost is required by crow
+link_directories(<boost_installation_dir>/lib)
+link_libraries(boost_system boost_thread)
+
+add_executable(<exe_name> ./xxx.cpp)
+target_link_libraries(<exe_name> ${CMAKE_THREAD_LIBS_INIT})
+```
