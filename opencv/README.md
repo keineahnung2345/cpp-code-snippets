@@ -12,7 +12,13 @@ If the above fails, use the following:
 g++ xxx.cpp -I /usr/local/include/opencv4 -L /usr/local/lib -lopencv_imgcodecs -lopencv_core -std=c++11
 ```
 
-In `xxx.cpp`, it includes `opencv2/imgcodecs.hpp`, so we need to link with `opencv_imgcodecs` and `opencv_core`.
+In `xxx.cpp`, it includes `opencv2/imgcodecs.hpp`, so we need to link with `opencv_imgcodecs`.
+We also need to link `opencv_core` because otherwise it gives the following error:
+```
+/usr/bin/ld: /tmp/cc7ZradY.o: undefined reference to symbol '_ZN2cv8fastFreeEPv'
+//usr/local/lib/libopencv_core.so.4.1: error adding symbols: DSO missing from command line
+collect2: error: ld returned 1 exit status
+```
 
 ## cmake
 ### use OpenCV after installing
