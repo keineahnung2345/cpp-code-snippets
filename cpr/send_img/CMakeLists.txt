@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.5)
+project(send_img)
+set(CMAKE_CXX_STANDARD 14)
+set(OpenCV_DIR /usr/local/lib/cmake/opencv4)
+FIND_PACKAGE(OpenCV REQUIRED)
+include_directories(./include <cpp-base64_installation_dir>)
+add_subdirectory(./src/cpr)
+add_executable(send_img ./src/send_img.cpp <cpp-base64_installation_dir>/base64.cpp)
+message("opencv libs: " ${OpenCV_LIBS})
+target_link_libraries(send_img ${OpenCV_LIBS} cpr)
+
