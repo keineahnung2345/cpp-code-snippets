@@ -6,6 +6,11 @@ compile, including opencv headers and libraries
 ```sh
 g++ xxx.cpp `pkg-config --cflags --libs opencv`
 ```
+or:
+```sh
+g++ xxx.cpp `pkg-config --cflags --libs opencv4`
+```
+for OpenCV4.
 
 If the above fails, use the following:
 ```sh
