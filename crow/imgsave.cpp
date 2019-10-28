@@ -38,8 +38,8 @@ int main(int argc, char* argv[]) {
             string decoded_image = base64_decode(base64_string);
             vector<uchar> data(decoded_image.begin(), decoded_image.end());
             cv::Mat frame = imdecode(data, cv::IMREAD_UNCHANGED);
-            cv::cvtColor(frame, frame, cv::COLOR_BGR2RGB);
-            CROW_LOG_INFO << "convert color successfully.";
+            //cv::cvtColor(frame, frame, cv::COLOR_BGR2RGB);
+            //CROW_LOG_INFO << "convert color successfully.";
             cv::imwrite("abc.jpg", frame);
             result["flag"] = 1;
             os << crow::json::dump(result);
