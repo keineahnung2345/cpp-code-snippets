@@ -13,7 +13,7 @@ using namespace std;
 //compile with:
 //export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:<boost_installation_dir>/lib
 //g++ imgsave.cpp <cpp-base64_installation_dir>/base64.cpp -I <crow_dir>/amalgamate/ -I <cpp-base64_installation_dir> -L <boost_installation_dir>/lib/ -lboost_system `pkg-config --cflags --libs opencv4` -lpthread -std=c++11
-//note that imgsave.cpp and base64.cpp should be compiled together
+//note that imgsave.cpp and base64.cpp should be compiled together(g++ with 2 or more cpp is just like add_executable with 2 or more cpp)
 
 //this service parse the request and save the image from request
 
