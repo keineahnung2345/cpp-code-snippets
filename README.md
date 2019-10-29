@@ -141,3 +141,6 @@ FIND_PACKAGE(OpenCV REQUIRED)
 ```
 
 Another method: [cmake find_package specify path](https://stackoverflow.com/questions/49816206/cmake-find-package-specify-path)
+
+## Conventions
+[Separating class code into a header and cpp file](https://stackoverflow.com/questions/9579930/separating-class-code-into-a-header-and-cpp-file)
