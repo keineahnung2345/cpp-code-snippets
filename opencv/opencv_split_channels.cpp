@@ -1,6 +1,7 @@
 #include <opencv2/opencv.hpp>
 
 //g++ opencv_split_channels.cpp `pkg-config --cflags --libs opencv`
+//https://stackoverflow.com/questions/6699374/access-to-each-separate-channel-in-opencv
 
 int main(){
     cv::Mat img = cv::imread("xxx.jpeg");
