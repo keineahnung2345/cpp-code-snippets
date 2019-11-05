@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    int *i1, *i2; #put one * per pointer
+    int *i1, *i2; //put one * per pointer
     int* i3, i4;
 
     cout << typeid(i1).name() << endl; #Pi
