@@ -1,5 +1,7 @@
 #include <opencv2/opencv.hpp>
 
+//https://stackoverflow.com/questions/43183931/opencv-create-3-channel-mat-from-continuous-data-array
+
 //cv::Mat createMat(uchar *rawData, unsigned int dimX, unsigned int dimY)
 cv::Mat createMat(float *rawData, unsigned int dimX, unsigned int dimY)
 {   
