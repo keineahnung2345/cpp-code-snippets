@@ -31,6 +31,10 @@ To use OpenCV, add the following in `CMakeLists.txt`:
 ```
 set(OpenCV_DIR /usr/local/lib)
 FIND_PACKAGE(OpenCV REQUIRED)
+message(STATUS "OpenCV library status:")
+message(STATUS "    version: ${OpenCV_VERSION}")
+message(STATUS "    libraries: ${OpenCV_LIBRARIES}")
+message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
 add_definitions(-DOPENCV)
 add_executable(<exeutable_file_name> <./src/xxx.cpp>)
 # ${OpenCV_LIBS} is set by "FIND_PACKAGE"
