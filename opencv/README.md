@@ -36,6 +36,10 @@ add_executable(<exeutable_file_name> <./src/xxx.cpp>)
 # ${OpenCV_LIBS} is set by "FIND_PACKAGE"
 target_link_libraries(<exeutable_file_name>  ${OpenCV_LIBS})
 ```
+To find OpenCV installation directory, use the following instruction and pick a suitable one:
+```sh
+find / -name OpenCVConfig.cmake
+```
 
 ### use OpenCV without installing
 To use OpenCV without installing, we need to:
