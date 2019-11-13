@@ -31,7 +31,7 @@ if (NOT CMAKE_BUILD_TYPE)
 endif()
 
 #set(Boost_INCLUDE_DIR /boost_installation_dir/include)
-link_directories(/home/jian/Documents/installation/boost_1_52_0/installation/lib)
+link_directories(/boost_installation_dir/lib)
 link_libraries(boost_system boost_thread)
 if (MSVC)
         set(Boost_USE_STATIC_LIBS "On")
