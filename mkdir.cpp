@@ -1,6 +1,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <string>
 
 //https://stackoverflow.com/questions/7430248/creating-a-new-directory-in-c
 
