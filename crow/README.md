@@ -23,7 +23,7 @@ In CMakeLists.txt:
 ```
 find_package(Threads)
 
-include_directories(/home/jian/Documents/crow/amalgamate)
+include_directories(<crow_dir>/amalgamate)
 # boost is required by crow
 link_directories(<boost_installation_dir>/lib)
 link_libraries(boost_system boost_thread)
