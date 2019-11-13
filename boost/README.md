@@ -41,3 +41,18 @@ endif()
 message("Boost_INCLUDE_DIR ${Boost_INCLUDE_DIR}")
 include_directories( ${Boost_INCLUDE_DIR} )
 ```
+
+or 
+
+```
+find_package(Boost REQUIRED log COMPONENTS system thread)
+message(STATUS "Boost library status:")
+message(STATUS "    version: ${Boost_VERSION}")
+message(STATUS "    libraries: ${Boost_LIBRARIES}")
+message(STATUS "    include path: ${Boost_INCLUDE_DIRS}")
+
+add_definitions(-DBOOST_LOG_DYN_LINK)
+include_directories(${Boost_INCLUDE_DIRS})
+
+target_link_libraries(<exe_name> ${Boost_LIBRARIES})
+```
