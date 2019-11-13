@@ -3,6 +3,8 @@
 
 //https://stackoverflow.com/questions/17363886/can-i-determine-the-number-of-channels-in-cvmat-opencv
 //https://stackoverflow.com/questions/10167534/how-to-find-out-what-type-of-a-mat-object-is-with-mattype-in-opencv
+//https://stackoverflow.com/questions/13428689/whats-the-difference-between-cvtype-values-in-opencv
+//CV_8U=0, CV_8S=1, CV_16U=2, CV_16S=3, CV_32S=4, CV_32F=5, CV_64F=6
 std::string type2str(int type) {
   std::string r;
   
