@@ -3,6 +3,8 @@
 #include <iomanip>
 #include <sstream>
 
+//https://stackoverflow.com/questions/29200635/convert-float-to-string-with-precision-number-of-decimal-digits-specified
+
 int main(){
     std::string sd = "123.456789123";
     std::cout << std::stod(sd) << std::endl; //123.457
