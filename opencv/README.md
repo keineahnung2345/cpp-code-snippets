@@ -8,7 +8,7 @@ g++ xxx.cpp `pkg-config --cflags --libs opencv`
 ```
 or:
 ```sh
-g++ xxx.cpp `pkg-config --cflags --libs opencv4`
+g++ xxx.cpp `pkg-config --cflags --libs opencv4` -std=c++11
 ```
 for OpenCV4.
 
