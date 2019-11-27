@@ -9,6 +9,8 @@ void print_map(T m){
     }
 }
 
+//http://www.cplusplus.com/reference/map/map/operator[]/
+
 int main(){
     std::map<int, int> m_i;
     std::map<int, std::string> m_s;
