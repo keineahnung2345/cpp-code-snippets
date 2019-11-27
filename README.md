@@ -144,3 +144,17 @@ Another method: [cmake find_package specify path](https://stackoverflow.com/ques
 
 ## Conventions
 [Separating class code into a header and cpp file](https://stackoverflow.com/questions/9579930/separating-class-code-into-a-header-and-cpp-file)
+
+## Macros
+### #pragma once
+```cpp
+#ifndef __SOMEFILE_H__
+#define __SOMEFILE_H__
+// ...
+#endif
+```
+can be replaced with:
+```cpp
+#pragma once
+// ...
+```
