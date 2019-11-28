@@ -119,6 +119,16 @@ link_directories( $ENV{LD_LIBRARY_PATH} )
 ```
 into `CMakeLists.txt`.
 
+## ./a.out: error while loading shared libraries: xxx.so: cannot open shared object file: No such file or directory
+[g++ executable cannot find shared library](https://stackoverflow.com/questions/12000990/g-executable-cannot-find-shared-library)
+```sh
+LD_LIBRARY_PATH=/usr/local/lib ./a.out
+```
+or
+```sh
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+```
+
 ## specify CUDA path while cmake
 [How to let cmake find CUDA](https://stackoverflow.com/questions/19980412/how-to-let-cmake-find-cuda)
 
