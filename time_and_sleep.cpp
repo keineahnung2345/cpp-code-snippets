@@ -30,14 +30,14 @@ int main(){
     
     // method 2 : chrono, it's unit is millisecond
     // https://stackoverflow.com/questions/19555121/how-to-get-current-timestamp-in-milliseconds-since-1970-just-the-way-java-gets
-    long start = get_time();
-    std::cout << "start time: " << start << std::endl;
+    long start2 = get_time();
+    std::cout << "start time: " << start2 << std::endl;
     std::cout << "now sleep for 4605 milliseconds." << std::endl;
-    std::chrono::milliseconds timespan(4605); // or whatever
-    std::this_thread::sleep_for(timespan);
-    long end = get_time();
-    std::cout << "end time: " << end << std::endl;
-    std::cout << "it takes: " << end - start << " milliseconds." << std::endl;
+    std::chrono::milliseconds timespan2(4605); // or whatever
+    std::this_thread::sleep_for(timespan2);
+    long end2 = get_time();
+    std::cout << "end time: " << end2 << std::endl;
+    std::cout << "it takes: " << end2 - start2 << " milliseconds." << std::endl;
     /*
     start time: 1571821790057
     now sleep for 4605 milliseconds.
@@ -48,16 +48,16 @@ int main(){
     // method 3 : clock, not accurate
     //https://www.geeksforgeeks.org/clock-function-in-c-c/
     //https://stackoverflow.com/questions/10455905/why-is-clocks-per-sec-not-the-actual-number-of-clocks-per-second
-    clock_t start = clock();
-    std::cout << "start time: " << start << std::endl;
+    clock_t start3 = clock();
+    std::cout << "start time: " << start3 << std::endl;
     std::cout << "now sleep for 4605 milliseconds." << std::endl;
-    std::chrono::milliseconds timespan(4605); // or whatever
-    std::this_thread::sleep_for(timespan);
-    clock_t end = clock();
-    std::cout << "end time: " << end << std::endl;
+    std::chrono::milliseconds timespan3(4605); // or whatever
+    std::this_thread::sleep_for(timespan3);
+    clock_t end3 = clock();
+    std::cout << "end time: " << end3 << std::endl;
     std::cout << "CLOCKS_PER_SEC: " << CLOCKS_PER_SEC << std::endl;
-    std::cout << "it takes: " << (float)(end - start)/CLOCKS_PER_SEC << " milliseconds." << std::endl;
-    
+    std::cout << "it takes: " << (float)(end3 - start3)/CLOCKS_PER_SEC << " milliseconds." << std::endl;
+
     /*
     start time: 763
     now sleep for 4605 milliseconds.
