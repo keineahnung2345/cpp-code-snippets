@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <time.h>
 
+//https://stackoverflow.com/questions/3673226/how-to-print-time-in-format-2009-08-10-181754-811
+
 int main()
 {
     time_t timer;
