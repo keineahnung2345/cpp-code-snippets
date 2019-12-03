@@ -4,6 +4,8 @@
 
 using namespace std;
 
+//https://stackoverflow.com/questions/13152252/is-there-a-compact-equivalent-to-python-range-in-c-stl
+
 int main()
 {
     vector<int> v(10);
