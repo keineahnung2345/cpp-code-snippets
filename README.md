@@ -61,6 +61,11 @@ This equals to add `#define MYVAR` in `.cpp` or `.h` files.
 add_definitions(-D MYVAR)
 ```
 
+### make, specify number of jobs as the number of processing units available
+```sh
+make -j $(nproc)
+```
+
 ### cmake in debug mode and make in verbose mode
 [Using CMake with GNU Make: How can I see the exact commands?](https://stackoverflow.com/questions/2670121/using-cmake-with-gnu-make-how-can-i-see-the-exact-commands)
 ```sh
