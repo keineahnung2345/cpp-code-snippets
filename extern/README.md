@@ -1,7 +1,12 @@
 # Demo of "extern" keyword in C
 The demo is from [When to use extern in C++](https://stackoverflow.com/questions/10422034/when-to-use-extern-in-c).
 
-It shows that we can "declare"(but not "define", which means allocating its memory) a variable named `global_x` in `header.h`. And "define" it in another file `src1.c`. And we can see that in the file `src2.c`, that variable can be used by just including `header.h`.
+Before start, we should know that, from [Understanding “extern” keyword in C](https://www.geeksforgeeks.org/understanding-extern-keyword-in-c/):
+```
+When extern is used with a variable, it’s only declared not defined.
+```
+
+The demo shows that we can "declare"(but not "define", which means allocating its memory) a variable named `global_x` in `header.h`. And "define" it in another file `src1.c`. And we can see that in the file `src2.c`, that variable can be used by just including `header.h`.
 
 What if we "define" `global_x` in `header.h` and remove its definition from `src1.c`, does that work as well? The answer is no. The compiler gives the following error message:
 ```
