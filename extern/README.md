@@ -1,4 +1,20 @@
 # Demo of "extern" keyword in C
+The demo is from [When to use extern in C++](https://stackoverflow.com/questions/10422034/when-to-use-extern-in-c).
+
+It shows that we can "declare"(but not "define", which means allocating its memory) a variable named `global_x` in `header.h`. And "define" it in another file `src1.c`. And we can see that in the file `src2.c`, that variable can be used by just including `header.h`.
+
+What if we "define" `global_x` in `header.h` and remove its definition from `src1.c`, does that work as well? The answer is no. The compiler gives the following error message:
+```
+/tmp/ccxlZqZZ.o:(.bss+0x0): multiple definition of `global_x'
+/tmp/ccq27A5A.o:(.bss+0x0): first defined here
+collect2: error: ld returned 1 exit status
+```
+The reason is(also from the link above):
+```
+Each source file that includes the header will have its own variable, 
+so each source file will compile independently but the linker will complain 
+because two source files will have the same global identifiers.
+```
 
 ## Compile
 ```sh
