@@ -76,3 +76,39 @@ Call Stack (most recent call first):
   CMakeLists.txt:54 (FIND_PACKAGE)
 ```
 It means the `cmake` used to build the project is too old, one needs to update cmake version according to [CMake finds Boost but the imported targets not available for Boost version](https://stackoverflow.com/questions/42123509/cmake-finds-boost-but-the-imported-targets-not-available-for-boost-version).
+
+### Could not find the following Boost libraries: boost_python
+When coming to:
+```
+FIND_PACKAGE(Boost REQUIRED python)
+```
+If there is following error:
+```
+CMake Error at /usr/share/cmake-3.5/Modules/FindBoost.cmake:1677 (message):
+  Unable to find the requested Boost libraries.
+
+  Boost version: 1.71.0
+
+  Boost include path: /workspace/data/installation/boost_1_71_0/include
+
+  Could not find the following Boost libraries:
+
+          boost_python
+
+  No Boost libraries were found.  You may need to set BOOST_LIBRARYDIR to the
+  directory containing Boost libraries or BOOST_ROOT to the location of
+  Boost.
+Call Stack (most recent call first):
+  CMakeLists.txt:53 (FIND_PACKAGE)
+```
+or:
+```
+CMake Error at /usr/local/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake:146 (message):
+  Could NOT find Boost (missing: python) (found version "1.71.0")
+Call Stack (most recent call first):
+  /usr/local/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake:393 (_FPHSA_FAILURE_MESSAGE)
+  /usr/local/share/cmake-3.16/Modules/FindBoost.cmake:2179 (find_package_handle_standard_args)
+  CMakeLists.txt:55 (find_package)
+
+```
+One needs to specify python version by changing `FIND_PACKAGE(Boost REQUIRED python)` to `FIND_PACKAGE(Boost REQUIRED python35)` according to [Cmake could not find boost_python](https://stackoverflow.com/questions/56067518/cmake-could-not-find-boost-python).
