@@ -10,10 +10,13 @@ Check what libraries boost contains:
 ```
 Bootstrap, specify the libraries you want to install:
 ```
-./bootstrap.sh --prefix=/xxx/boost_1_xx_0/installation --with-libraries=system
-./bootstrap.sh --prefix=/xxx/boost_1_xx_0/installation --with-libraries=thread
-./bootstrap.sh --prefix=/xxx/boost_1_xx_0/installation --with-libraries=chrono
-./bootstrap.sh --prefix=/xxx/boost_1_xx_0/installation --with-libraries=date_time
+./bootstrap.sh --prefix=<boost_installation_dir> --with-libraries=system
+./bootstrap.sh --prefix=<boost_installation_dir> --with-libraries=thread
+./bootstrap.sh --prefix=<boost_installation_dir> --with-libraries=chrono
+./bootstrap.sh --prefix=<boost_installation_dir> --with-libraries=date_time
+# https://stackoverflow.com/questions/5539557/boost-and-python-3-x
+# without the "--with-python-version" flag, it could find python2 rather than python3
+./bootstrap.sh --prefix=<boost_installation_dir> --with-libraries=python --with-python-version=3.5
 ```
 Finally install:
 ```sh
