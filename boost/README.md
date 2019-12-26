@@ -60,3 +60,19 @@ target_link_libraries(<exe_name> ${Boost_LIBRARIES})
 ```
 
 From [How can I get CMake to find my alternative Boost installation?](https://stackoverflow.com/questions/3016448/how-can-i-get-cmake-to-find-my-alternative-boost-installation), we can set `BOOST_ROOT` so that cmake can find boost from custom installation directory.
+
+### Warning: Imported targets not available for Boost version 107100
+When coming to:
+```
+FIND_PACKAGE(Boost xxx)
+```
+If there is following warning:
+```
+CMake Warning at /usr/share/cmake-3.5/Modules/FindBoost.cmake:725 (message):
+  Imported targets not available for Boost version 107100
+Call Stack (most recent call first):
+  /usr/share/cmake-3.5/Modules/FindBoost.cmake:763 (_Boost_COMPONENT_DEPENDENCIES)
+  /usr/share/cmake-3.5/Modules/FindBoost.cmake:1332 (_Boost_MISSING_DEPENDENCIES)
+  CMakeLists.txt:54 (FIND_PACKAGE)
+```
+It means the `cmake` used to build the project is too old, one needs to update cmake version according to [CMake finds Boost but the imported targets not available for Boost version](https://stackoverflow.com/questions/42123509/cmake-finds-boost-but-the-imported-targets-not-available-for-boost-version).
