@@ -48,8 +48,11 @@ include_directories( ${Boost_INCLUDE_DIR} )
 or 
 
 ```
-#this could be helpful when boost isn't installed in the default location
+#https://stackoverflow.com/questions/3016448/how-can-i-get-cmake-to-find-my-alternative-boost-installation
+#these could be helpful when boost isn't installed in the default location
 #set(BOOST_ROOT <boost_installation_dir>)
+#set(BOOST_LIBRARYDIR <boost_installation_dir>/lib)
+
 find_package(Boost REQUIRED log COMPONENTS system thread)
 message(STATUS "Boost library status:")
 message(STATUS "    version: ${Boost_VERSION}")
