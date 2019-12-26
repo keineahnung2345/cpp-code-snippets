@@ -1,5 +1,8 @@
 # OpenCV
 
+## Installation
+[linux-commands/Linux packages - opencv](https://github.com/keineahnung2345/linux-commands/blob/master/Linux%20packages.md#opencv)
+
 ## g++
 compile, including opencv headers and libraries
 [compiling opencv in c++](https://stackoverflow.com/questions/9094941/compiling-opencv-in-c)
