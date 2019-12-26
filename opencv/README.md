@@ -3,6 +3,15 @@
 ## Installation
 [linux-commands/Linux packages - opencv](https://github.com/keineahnung2345/linux-commands/blob/master/Linux%20packages.md#opencv)
 
+## Check version
+Check the file `<opencv_root_dir>/include/opencv2/core/version.hpp`:
+```cpp
+#define CV_VERSION_MAJOR    4
+#define CV_VERSION_MINOR    1
+#define CV_VERSION_REVISION 2
+#define CV_VERSION_STATUS   "-openvino"
+```
+
 ## g++
 compile, including opencv headers and libraries
 [compiling opencv in c++](https://stackoverflow.com/questions/9094941/compiling-opencv-in-c)
