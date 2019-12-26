@@ -27,6 +27,7 @@ g++ xxx.cpp -I /usr/local/include
 ```
 cmake_minimum_required(VERSION 3.5)
 project(name)
+# specify the c++ version to use
 set(CMAKE_CXX_STANDARD 14)
 find_package(OpenCV REQUIRED)
 set(SOURCE_FILES ./src/file1.cpp ./src/file2.cpp)
