@@ -169,6 +169,19 @@ Another method: [cmake find_package specify path](https://stackoverflow.com/ques
 [Separating class code into a header and cpp file](https://stackoverflow.com/questions/9579930/separating-class-code-into-a-header-and-cpp-file)
 
 ## Macros
+### #define, #if, #elif, #else, #end
+[Preprocessor check if multiple defines are not defined](https://stackoverflow.com/questions/17237545/preprocessor-check-if-multiple-defines-are-not-defined)
+```cpp
+#define <MACRO_A>
+
+#ifdef <MACRO_A>
+#elif defined(<MACRO_B>)
+#elif !define(<MACRO_C>) && !define(<MACRO_D>)
+#elif !define(<MACRO_E>) || !define(<MACRO_F>)
+#else
+#end
+```
+
 ### #pragma once
 ```cpp
 #ifndef __SOMEFILE_H__
