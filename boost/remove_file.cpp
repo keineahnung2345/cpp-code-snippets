@@ -9,6 +9,8 @@
 collect2: error: ld returned 1 exit status
 */
 
+//https://stackoverflow.com/questions/19944753/linking-compiling-a-program-that-uses-boost-filesystem-hpp
+
 int main(){
     std::string fname = "tmp.txt";
     boost::filesystem::path fname_path(fname);
