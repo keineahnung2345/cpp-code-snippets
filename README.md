@@ -69,6 +69,13 @@ This equals to add `#define MYVAR` in `.cpp` or `.h` files.
 add_definitions(-D MYVAR)
 ```
 
+#### CMAKE_SOURCE_DIR v.s. PROJECT_SOURCE_DIR
+[Are CMAKE_SOURCE_DIR and PROJECT_SOURCE_DIR the same in CMake?](https://stackoverflow.com/questions/32028667/are-cmake-source-dir-and-project-source-dir-the-same-in-cmake)
+
+`CMAKE_SOURCE_DIR`: the folder containing the top-level CMakeLists.txt
+
+`PROJECT_SOURCE_DIR`: the inner-most folder containing CMakeLists.txt with `project()` command
+
 ### make, specify number of jobs as the number of processing units available
 ```sh
 make -j $(nproc)
