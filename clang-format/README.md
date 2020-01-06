@@ -17,6 +17,8 @@ clang-format -h
 There are `LLVM`, `Google`, `Chromium`, `Mozilla`, `WebKit`, `Microsoft`.
 
 ## Use it in a project
+[Setting IndentWidth doesn't work in clang-format](https://stackoverflow.com/questions/26740500/setting-indentwidth-doesnt-work-in-clang-format)
+
 Under your project root directory, create the file `.clang-format` with following contents:
 
 ```
@@ -28,6 +30,8 @@ UseTab:          Never
 ```
 
 ## Use it from command line
+[How to call clang-format over a cpp project folder?](https://stackoverflow.com/questions/28896909/how-to-call-clang-format-over-a-cpp-project-folder)
+
 Formatting one file:
 ```sh
 clang-format -i -style=Chromium <file_to_be_formatted>
