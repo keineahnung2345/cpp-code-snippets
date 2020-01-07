@@ -1,6 +1,8 @@
 #include <string>
 #include <iostream>
 
+//https://www.geeksforgeeks.org/convert-character-array-to-string-in-c/
+
 int main(){
     char a[] = { 'C', 'O', 'D', 'E' };
     char b[] = "geeksforgeeks";
