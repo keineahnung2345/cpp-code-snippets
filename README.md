@@ -149,6 +149,12 @@ or
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 ```
 
+## stack smashing detected
+From [StackOverflow - Stack smashing detected](https://stackoverflow.com/questions/1345670/stack-smashing-detected/50690687), add the following in `CMakeLists` to temporarily get rid of this error:
+```
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-stack-protector -std=c++11")
+```
+
 ## specify CUDA path while cmake
 [How to let cmake find CUDA](https://stackoverflow.com/questions/19980412/how-to-let-cmake-find-cuda)
 
