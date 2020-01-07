@@ -21,6 +21,14 @@ std::string join(Iter begin, Iter end, std::string const& separator)
 int main(){
     std::vector<std::string> vs = {"monkey", "tiger", "horse"};
     std::vector<float> vf = {2.333, 4.2322, 7.2125, 553.3};
+    std::vector<bool> vb = {true, false, true, false, false};
     std::cout << join(vs.begin(), vs.end(), ", ") << std::endl;
     std::cout << join(vf.begin(), vf.end(), ", ") << std::endl;
+    std::cout << join(vb.begin(), vb.end(), ", ") << std::endl;
 }
+
+/*
+monkey, tiger, horse
+2.3, 4.23, 7.21, 553.30
+1, 0, 1, 0, 0
+*/
