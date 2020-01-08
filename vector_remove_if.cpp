@@ -2,6 +2,9 @@
 #include <vector>
 #include <algorithm> //remove_if, distance
 
+//https://stackoverflow.com/questions/23122555/removing-by-index-from-a-c-vector-using-remove-if
+//https://stackoverflow.com/questions/54675992/alternatives-to-vector-size-after-running-remove-if
+
 int main(){
     std::vector<int> data = {6,3,7,2,1,9};
 
