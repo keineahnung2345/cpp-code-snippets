@@ -2,6 +2,9 @@
 #include <boost/algorithm/string/trim_all.hpp>
 #include <iostream>
 
+//https://stackoverflow.com/questions/216823/whats-the-best-way-to-trim-stdstring
+//https://blog.csdn.net/zhangxiong1985/article/details/84453292
+
 int main(){
     std::string str("    hello world! ");
     std::cout << "original: '" << str << "'" << std::endl;
