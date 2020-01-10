@@ -27,5 +27,9 @@ int main(){
     std::cout << std::stoi(si, nullptr) << std::endl; //123456
     std::cout << std::stoi(si) << std::endl; //123456
 
+    //to long
+    std::string sl = "1234567890123456";
+    std::cout << std::stol(sl) << std::endl; //1234567890123456
+
     return 0;
 }
