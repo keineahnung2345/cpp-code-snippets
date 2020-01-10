@@ -52,7 +52,7 @@ int main(void)
     
         /* Create a connection */
         driver = get_driver_instance();
-        con = driver->connect("tcp://127.0.0.1:3306", "root", "jianbox");
+        con = driver->connect("tcp://127.0.0.1:3306", "root", "password");
         /* Connect to the MySQL test database */
         con->setSchema("performance_schema");
     
