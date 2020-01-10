@@ -59,7 +59,7 @@ int main(void)
         stmt = con->createStatement();
         res = stmt->executeQuery("SHOW COLUMNS FROM users");
         while (res->next()) {
-         cout << res->getString(1) << endl;
+            cout << res->getString(1) << endl;
         }
         delete res;
         delete stmt;
