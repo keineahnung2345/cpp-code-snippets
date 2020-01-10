@@ -155,6 +155,11 @@ From [StackOverflow - Stack smashing detected](https://stackoverflow.com/questio
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-stack-protector -std=c++11")
 ```
 
+## c++: internal compiler error: Killed (program cc1plus)
+[make -j 8 g++: internal compiler error: Killed (program cc1plus)](https://stackoverflow.com/questions/30887143/make-j-8-g-internal-compiler-error-killed-program-cc1plus)
+
+That's probably `make -j4` uses to much memory, so it's killed by system, try using `make -j1` instead.
+
 ## specify CUDA path while cmake
 [How to let cmake find CUDA](https://stackoverflow.com/questions/19980412/how-to-let-cmake-find-cuda)
 
