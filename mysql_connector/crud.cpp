@@ -102,6 +102,16 @@ std::string select(sql::Statement *stmt, sql::ResultSet *res){
     return res_str;
 }
 
+std::string get_count(sql::Statement *stmt, sql::ResultSet *res){
+    std::string query, res_str;
+    query = "SELECT COUNT(*) FROM mytable";
+    res = stmt->executeQuery(query);
+    while (res->next()) {
+        res_str += std::to_string(res->getInt(1));
+    }
+    return res_str;
+}
+
 int main(void)
 {
     try {
@@ -136,6 +146,9 @@ int main(void)
         update(stmt, "09876543210");
 
         res_str = select(stmt, res);
+        std::cout << res_str << std::endl;
+
+        res_str = get_count(stmt, res);
         std::cout << res_str << std::endl;
 
         delete res;
