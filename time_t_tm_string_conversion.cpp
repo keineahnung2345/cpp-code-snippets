@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <string.h>
+#include <string>
 
 //https://stackoverflow.com/questions/3673226/how-to-print-time-in-format-2009-08-10-181754-811
 //https://www.runoob.com/w3cnote/cpp-time_t.html
@@ -8,50 +9,81 @@
 //https://stackoverflow.com/questions/16344748/why-gmtime-and-localtime-give-me-the-same-result
 //https://stackoverflow.com/questions/11213326/how-to-convert-a-string-variable-containing-time-to-time-t-type-in-c
 
+char fmt[] = "%Y-%m-%d-%H:%M:%S";
+
+std::string time_t_to_string(time_t timer, bool local){
+    struct tm *tm_info_tmp, tm_info;
+    char time_char_arr[100];
+    std::string time_str;
+
+    if(!local){
+        tm_info_tmp = gmtime(&timer);
+    }else{
+        tm_info_tmp = localtime(&timer);
+    }
+    //need to copy the value from tm_info_tmp to another variable, ow it will be overwritten later
+    memcpy(&tm_info, tm_info_tmp, sizeof(tm_info));
+
+    if(!local){
+        printf("GMT tm                         :");
+    }else{
+        printf("local time tm                  :");
+    }
+    strftime(time_char_arr, 100, fmt, &tm_info);
+    puts(time_char_arr);
+
+    time_str = std::string(time_char_arr);
+
+    return time_str;
+}
+
+time_t string_to_time_t(std::string time_str){
+    struct tm tm_info;
+    time_t timer;
+
+    //from string to char array to struct tm
+    strptime(time_str.c_str(), fmt, &tm_info);
+
+    //from struct tm to time_t
+    timer = mktime(&tm_info);
+    printf("time_t back                    :%ld, %s", (long int)timer, ctime(&timer));
+
+    return timer;
+}
+
 int main()
 {
     time_t timer, timer_back;
-    struct tm *tm_info_tmp;
-    struct tm tm_info_local, tm_info_gm;
-    struct tm tm_info_local_back, tm_info_gm_back;
-    char str_local[100], str_gm[100];
-    char fmt[] = "%Y-%m-%d-%H:%M:%S";
+    std::string time_str;
 
     time(&timer);
     printf("time_t                         :%ld, %s",(long int)timer, ctime(&timer));
 
-    tm_info_tmp = gmtime(&timer);
-    //need to copy the value from tm_info_tmp to another variable, ow it will be overwritten later
-    memcpy(&tm_info_gm, tm_info_tmp, sizeof(tm_info_gm));
-    tm_info_tmp = localtime(&timer);
-    memcpy(&tm_info_local, tm_info_tmp, sizeof(tm_info_local));
+    //use GMT
+    printf("\nuse GMT\n");
+    time_str = time_t_to_string(timer, false);
+    timer_back = string_to_time_t(time_str);
+    printf("time_t                         :%ld, %s",(long int)timer_back, ctime(&timer_back));
 
-    printf("GMT tm                         :");
-    strftime(str_gm, 100, fmt, &tm_info_gm);
-    puts(str_gm);
-
-    printf("local time tm                  :");
-    strftime(str_local, 100, fmt, &tm_info_local);
-    puts(str_local);
-
-    //from string to struct tm
-    strptime(str_gm, fmt, &tm_info_gm_back);
-    strptime(str_local, fmt, &tm_info_local_back);
-
-    //from struct tm to time_t
-    timer_back = mktime(&tm_info_gm_back);
-    printf("time_t back from GMT tm        :%ld, %s", (long int)timer_back, ctime(&timer_back));
-
-    timer_back = mktime(&tm_info_local_back);
-    printf("time_t back from local time tm :%ld, %s", (long int)timer_back, ctime(&timer_back));
+    //use local time
+    printf("\nuse local time\n");
+    time_str = time_t_to_string(timer, true);
+    timer_back = string_to_time_t(time_str);
+    printf("time_t                         :%ld, %s",(long int)timer_back, ctime(&timer_back));
 
     return 0;
 }
 
 /*
-time_t                         :1578981505, Tue Jan 14 13:58:25 2020
-GMT tm                         :2020-01-14-05:58:25
-local time tm                  :2020-01-14-13:58:25
-time_t back from GMT tm        :1578952705, Tue Jan 14 05:58:25 2020
-time_t back from local time tm :1578981505, Tue Jan 14 13:58:25 2020
+time_t                         :1579055762, Wed Jan 15 10:36:02 2020
+
+use GMT
+GMT tm                         :2020-01-15-02:36:02
+time_t back                    :1579026962, Wed Jan 15 02:36:02 2020
+time_t                         :1579026962, Wed Jan 15 02:36:02 2020
+
+use local time
+local time tm                  :2020-01-15-10:36:02
+time_t back                    :1579055762, Wed Jan 15 10:36:02 2020
+time_t                         :1579055762, Wed Jan 15 10:36:02 2020
 */
