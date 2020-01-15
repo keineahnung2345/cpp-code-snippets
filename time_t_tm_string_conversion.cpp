@@ -25,9 +25,9 @@ std::string time_t_to_string(time_t timer, bool local){
     memcpy(&tm_info, tm_info_tmp, sizeof(tm_info));
 
     if(!local){
-        printf("GMT tm                         :");
+        printf("\nGMT tm                         :");
     }else{
-        printf("local time tm                  :");
+        printf("\nlocal time tm                  :");
     }
     strftime(time_char_arr, 100, fmt, &tm_info);
     puts(time_char_arr);
@@ -46,7 +46,6 @@ time_t string_to_time_t(std::string time_str){
 
     //from struct tm to time_t
     timer = mktime(&tm_info);
-    printf("time_t back                    :%ld, %s", (long int)timer, ctime(&timer));
 
     return timer;
 }
@@ -60,30 +59,24 @@ int main()
     printf("time_t                         :%ld, %s",(long int)timer, ctime(&timer));
 
     //use GMT
-    printf("\nuse GMT\n");
     time_str = time_t_to_string(timer, false);
     timer_back = string_to_time_t(time_str);
-    printf("time_t                         :%ld, %s",(long int)timer_back, ctime(&timer_back));
+    printf("time_t back                    :%ld, %s",(long int)timer_back, ctime(&timer_back));
 
     //use local time
-    printf("\nuse local time\n");
     time_str = time_t_to_string(timer, true);
     timer_back = string_to_time_t(time_str);
-    printf("time_t                         :%ld, %s",(long int)timer_back, ctime(&timer_back));
+    printf("time_t back                    :%ld, %s",(long int)timer_back, ctime(&timer_back));
 
     return 0;
 }
 
 /*
-time_t                         :1579055762, Wed Jan 15 10:36:02 2020
+time_t                         :1579055921, Wed Jan 15 10:38:41 2020
 
-use GMT
-GMT tm                         :2020-01-15-02:36:02
-time_t back                    :1579026962, Wed Jan 15 02:36:02 2020
-time_t                         :1579026962, Wed Jan 15 02:36:02 2020
+GMT tm                         :2020-01-15-02:38:41
+time_t back                    :1579027121, Wed Jan 15 02:38:41 2020
 
-use local time
-local time tm                  :2020-01-15-10:36:02
-time_t back                    :1579055762, Wed Jan 15 10:36:02 2020
-time_t                         :1579055762, Wed Jan 15 10:36:02 2020
+local time tm                  :2020-01-15-10:38:41
+time_t back                    :1579055921, Wed Jan 15 10:38:41 2020
 */
