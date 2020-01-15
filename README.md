@@ -160,6 +160,11 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-stack-protector -std=c++11")
 
 That's probably `make -j4` uses to much memory, so it's killed by system, try using `make -j1` instead.
 
+Another method is to tell kswapd0 to only move stuff to SWAP when you are completely out of RAM([kswapd0 is taking a lot of cpu](https://askubuntu.com/questions/259739/kswapd0-is-taking-a-lot-of-cpu/530661)):
+```sh
+echo vm.swappiness=0 | sudo tee -a /etc/sysctl.conf
+```
+
 ## specify CUDA path while cmake
 [How to let cmake find CUDA](https://stackoverflow.com/questions/19980412/how-to-let-cmake-find-cuda)
 
