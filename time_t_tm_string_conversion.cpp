@@ -2,6 +2,7 @@
 #include <time.h>
 #include <string.h>
 #include <string>
+#include <assert.h>
 
 //https://stackoverflow.com/questions/3673226/how-to-print-time-in-format-2009-08-10-181754-811
 //https://www.runoob.com/w3cnote/cpp-time_t.html
@@ -61,12 +62,15 @@ int main()
     //use GMT
     time_str = time_t_to_string(timer, false);
     timer_back = string_to_time_t(time_str);
+    //wrong, current version doesn't consider timezone
     printf("time_t back                    :%ld, %s",(long int)timer_back, ctime(&timer_back));
+//    assert((timer_back == timer) && "time_t before and after converting are different!");
 
     //use local time
     time_str = time_t_to_string(timer, true);
     timer_back = string_to_time_t(time_str);
     printf("time_t back                    :%ld, %s",(long int)timer_back, ctime(&timer_back));
+//    assert((timer_back == timer) && "time_t before and after converting are different!");
 
     return 0;
 }
