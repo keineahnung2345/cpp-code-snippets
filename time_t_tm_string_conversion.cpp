@@ -25,13 +25,8 @@ std::string time_t_to_string(time_t timer, bool local){
     //need to copy the value from tm_info_tmp to another variable, ow it will be overwritten later
     memcpy(&tm_info, tm_info_tmp, sizeof(tm_info));
 
-    if(!local){
-        printf("\nGMT tm                         :");
-    }else{
-        printf("\nlocal time tm                  :");
-    }
     strftime(time_char_arr, 100, fmt, &tm_info);
-    puts(time_char_arr);
+    //puts(time_char_arr);
 
     time_str = std::string(time_char_arr);
 
@@ -55,19 +50,26 @@ int main()
 {
     time_t timer, timer_back;
     std::string time_str;
+    bool isLocal;
 
     time(&timer);
     printf("time_t                         :%ld, %s",(long int)timer, ctime(&timer));
 
     //use GMT
-    time_str = time_t_to_string(timer, false);
+    isLocal = false;
+    printf("\n%s\n", isLocal ? "local: " : "global: ");
+    time_str = time_t_to_string(timer, isLocal);
+    printf("%s\n", time_str.c_str());
     timer_back = string_to_time_t(time_str);
     //wrong, current version doesn't consider timezone
     printf("time_t back                    :%ld, %s",(long int)timer_back, ctime(&timer_back));
 //    assert((timer_back == timer) && "time_t before and after converting are different!");
 
     //use local time
-    time_str = time_t_to_string(timer, true);
+    isLocal = true;
+    printf("\n%s\n", isLocal ? "local: " : "global: ");
+    time_str = time_t_to_string(timer, isLocal);
+    printf("%s\n", time_str.c_str());
     timer_back = string_to_time_t(time_str);
     printf("time_t back                    :%ld, %s",(long int)timer_back, ctime(&timer_back));
 //    assert((timer_back == timer) && "time_t before and after converting are different!");
@@ -76,11 +78,13 @@ int main()
 }
 
 /*
-time_t                         :1579055921, Wed Jan 15 10:38:41 2020
+time_t                         :1579157697, Thu Jan 16 14:54:57 2020
 
-GMT tm                         :2020-01-15-02:38:41
-time_t back                    :1579027121, Wed Jan 15 02:38:41 2020
+global: 
+2020-01-16-06:54:57
+time_t back                    :1579128897, Thu Jan 16 06:54:57 2020
 
-local time tm                  :2020-01-15-10:38:41
-time_t back                    :1579055921, Wed Jan 15 10:38:41 2020
+local: 
+2020-01-16-14:54:57
+time_t back                    :1579157697, Thu Jan 16 14:54:57 2020
 */
