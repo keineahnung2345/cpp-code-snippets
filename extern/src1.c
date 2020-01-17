@@ -1,4 +1,4 @@
-include "header.h"
+#include "header.h"
 
 // it needs to be defined somewhere
 int global_x;
