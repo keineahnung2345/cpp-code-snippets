@@ -22,6 +22,8 @@ because two source files will have the same global identifiers.
 ```
 So to use a variable across sources files, one should "declare" it in a header file, and then "define" it in one of the source files. And then any other source files can use that variable without the "multiple definition" error.
 
+Another useful link: [Why do we need the 'extern' keyword in C if file scope declarations have external linkage by default?](https://stackoverflow.com/questions/13300239/why-do-we-need-the-extern-keyword-in-c-if-file-scope-declarations-have-externa).
+
 ## Compile
 ```sh
 g++ -g src1.c src2.c -I`pwd`
