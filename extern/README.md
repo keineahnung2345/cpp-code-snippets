@@ -20,6 +20,7 @@ Each source file that includes the header will have its own variable,
 so each source file will compile independently but the linker will complain 
 because two source files will have the same global identifiers.
 ```
+So to use a variable across sources files, one should "declare" it in a header file, and then "define" it in one of the source files. And then any other source files can use that variable without the "multiple definition" error.
 
 ## Compile
 ```sh
