@@ -1,6 +1,8 @@
 #include <iostream>
 #include <iomanip> //setw, setfill
 
+//g++ time_t_tm_cout.cpp -std=c++11
+
 int main(){
     std::time_t timestamp = std::time(nullptr);
     tm* tm_local = std::localtime(&timestamp);
