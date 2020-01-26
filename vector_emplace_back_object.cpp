@@ -22,8 +22,8 @@ int main(){
     rects.push_back(Rectangle(10,20));
     rects.emplace_back(20,30);
 
-    std::cout << rects[0].get_area() << std::endl;
-    std::cout << rects[1].get_area() << std::endl;
+    std::cout << rects[0].get_area() << std::endl; //200
+    std::cout << rects[1].get_area() << std::endl; //600
     
     return 0;
 }
