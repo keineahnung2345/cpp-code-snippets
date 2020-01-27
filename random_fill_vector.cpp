@@ -1,6 +1,8 @@
 #include <vector>
 #include <iostream>
 
+//https://stackoverflow.com/questions/21516575/fill-a-vector-with-random-numbers-c
+
 int main(){
     std::vector<int> v(10);
     std::generate(v.begin(), v.end(), std::rand);
