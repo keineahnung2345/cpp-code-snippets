@@ -87,3 +87,22 @@ int main(){
     }
     return 0;
 }
+
+//result of RAII mode
+/*
+resource initialized
+set 100th element...
+set 101th element...
+resource released
+libc++abi.dylib: terminating with uncaught exception of type std::out_of_range: invalid index!
+Abort trap: 6
+*/
+
+//result of not RAII mode
+/*
+resource initialized
+set 100th element...
+set 101th element...
+libc++abi.dylib: terminating with uncaught exception of type std::out_of_range: invalid index!
+Abort trap: 6
+*/
