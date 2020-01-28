@@ -69,6 +69,7 @@ int main(){
         rm.set(100, 0);
         std::cout << "set 101th element..." << std::endl;
         rm.set(101, 0);
+        //destructor will be called even if there is an exception
 #else
         int* resource;
         int size = 100;
@@ -78,7 +79,7 @@ int main(){
         set(resource, size, 100, 0);
         std::cout << "set 101th element..." << std::endl;
         set(resource, size, 101, 0);
-        delete resource;
+        delete resource; //this will not be executed
         std::cout << "resource released" << std::endl;
 #endif
     }catch(...){
