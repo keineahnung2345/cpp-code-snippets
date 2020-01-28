@@ -5,6 +5,12 @@
 this is a demo of RAII class
 */
 
+//https://stackoverflow.com/questions/2321511/what-is-meant-by-resource-acquisition-is-initialization-raii
+//https://zhuanlan.zhihu.com/p/34660259
+//https://stackoverflow.com/questions/2709719/throwing-out-of-range-exception-in-c/2709733
+//https://www.gergel.im/2016/06/05/dtors-not-always-called-when-exceptions-are-thrown/
+//http://www.cplusplus.com/doc/tutorial/dynamic/
+
 #ifdef RAII
 class ResourceManager{
 public:
