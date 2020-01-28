@@ -10,6 +10,7 @@ this is a demo of RAII class
 //https://stackoverflow.com/questions/2709719/throwing-out-of-range-exception-in-c/2709733
 //https://www.gergel.im/2016/06/05/dtors-not-always-called-when-exceptions-are-thrown/
 //http://www.cplusplus.com/doc/tutorial/dynamic/
+//https://stackoverflow.com/questions/19594851/pointer-being-freed-was-not-allocateddelete-one-element-in-an-array
 
 #ifdef RAII
 class ResourceManager{
@@ -24,7 +25,8 @@ public:
     }
 
     ~ResourceManager(){
-        delete resource;
+        //notice it's not "delete resource"!
+        delete [] resource;
         std::cout << "resource released" << std::endl;
     }
 
@@ -79,7 +81,8 @@ int main(){
         set(resource, size, 100, 0);
         std::cout << "set 101th element..." << std::endl;
         set(resource, size, 101, 0);
-        delete resource; //this will not be executed
+        //notice it's not "delete resource"!
+        delete [] resource; //this will not be executed
         std::cout << "resource released" << std::endl;
 #endif
     }catch(...){
