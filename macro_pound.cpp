@@ -20,8 +20,8 @@
 int main(){
 #ifdef NULLPTR
     int* p = nullptr;
-    int i = 3;
 #else
+    int i = 3;
     int* p = &i;
 #endif
     CHECK_NULL_RET_VAL(p, 0)
