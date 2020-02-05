@@ -1,0 +1,42 @@
+#include <iostream>
+
+//http://www.cplusplus.com/reference/limits/numeric_limits/
+
+int main(){
+    std::cout << "max, min, lowest for 3 different data types: " << std::endl;
+    std::cout << "\nfloat: " << std::endl;
+    std::cout << std::numeric_limits<float>::max() << std::endl;
+    std::cout << std::numeric_limits<float>::min() << std::endl;
+    std::cout << std::numeric_limits<float>::lowest() << std::endl;
+
+    std::cout << "\ndouble: " << std::endl;
+    std::cout << std::numeric_limits<double>::max() << std::endl;
+    std::cout << std::numeric_limits<double>::min() << std::endl;
+    std::cout << std::numeric_limits<double>::lowest() << std::endl;
+
+    std::cout << "\nlong double: " << std::endl;
+    std::cout << std::numeric_limits<long double>::max() << std::endl;
+    std::cout << std::numeric_limits<long double>::min() << std::endl;
+    std::cout << std::numeric_limits<long double>::lowest() << std::endl;
+
+    return 0;
+}
+
+/*
+max, min, lowest for 3 different data types:
+
+float: 
+3.40282e+38
+1.17549e-38
+-3.40282e+38
+
+double:
+1.79769e+308
+2.22507e-308
+-1.79769e+308
+
+long double:
+1.18973e+4932
+3.3621e-4932
+-1.18973e+4932
+*/
