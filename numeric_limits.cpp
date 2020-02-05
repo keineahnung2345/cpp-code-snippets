@@ -4,11 +4,16 @@
 //http://www.cplusplus.com/reference/limits/numeric_limits/
 
 int main(){
-    std::cout << "max, min, lowest for 4 different data types: " << std::endl;
+    std::cout << "max, min, lowest for 5 different data types: " << std::endl;
     std::cout << "\nint: " << std::endl;
     std::cout << std::numeric_limits<int>::max() << std::endl;
     std::cout << std::numeric_limits<int>::min() << std::endl;
     std::cout << std::numeric_limits<int>::lowest() << std::endl;
+    
+    std::cout << "\nunsigned int: " << std::endl;
+    std::cout << std::numeric_limits<unsigned int>::max() << std::endl;
+    std::cout << std::numeric_limits<unsigned int>::min() << std::endl;
+    std::cout << std::numeric_limits<unsigned int>::lowest() << std::endl;
     
     std::cout << "\nfloat: " << std::endl;
     std::cout << std::numeric_limits<float>::max() << std::endl;
@@ -26,15 +31,20 @@ int main(){
     std::cout << std::numeric_limits<long double>::lowest() << std::endl;
     
     return 0;
-}
+}   
 
 /*
-max, min, lowest for 4 different data types:
+max, min, lowest for 5 different data types:
 
 int:
 2147483647
 -2147483648
 -2147483648
+
+unsigned int:
+4294967295
+0
+0
 
 float:
 3.40282e+38
