@@ -7,6 +7,7 @@ protoc -I=$SRC_DIR --cpp_out=$DST_DIR --java_out=$DST_DIR --python_out=$DST_DIR 
 ```
 
 ## g++
+Ref: [Can't compile example from google protocol buffers](https://stackoverflow.com/questions/10404027/cant-compile-example-from-google-protocol-buffers)
 ```sh
 g++ <file_that_access_your_messages>.cpp <your_messages>.pb.cc -lprotobuf -pthread -std=c++11
 ```
