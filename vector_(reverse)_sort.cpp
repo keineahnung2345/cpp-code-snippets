@@ -3,6 +3,8 @@
 #include <algorithm>
 #include <iterator>
 
+//https://stackoverflow.com/questions/9025084/sorting-a-vector-in-descending-order
+
 int main()
 {
     std::vector<int> v = {3,6,2,8,1,9};
