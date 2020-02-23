@@ -9,6 +9,9 @@ void combinationUtil(std::vector<int>& arr, std::vector<int>& combination, std::
         return;
     }
 
+    //r - index : number of remaining cells in "combination" to be filled
+    //end - i + 1 : the size of remaining cells in "arr"
+    //stop when we don't have enough elements to fill the remaining part of "combination"
     for (int i = start; i <= end && end - i + 1 >= r - index; i++) {
         combination[index] = arr[i];
         combinationUtil(arr, combination, combinations, i+1, end, index+1, r);
