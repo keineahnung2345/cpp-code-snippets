@@ -9,7 +9,7 @@ int main(){
     std::cout << mystr << std::endl;
     mystr.erase(
         std::unique(mystr.begin(), mystr.end(),
-            [](const char& lhs, const char& rhs){return lhs == ' ' && (lhs == rhs);}
+            [dup](const char& lhs, const char& rhs){return lhs == dup && (lhs == rhs);}
         ),
         mystr.end()
     );
