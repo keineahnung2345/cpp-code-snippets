@@ -1,6 +1,15 @@
 #include <iostream>
 #include <bitset>
 
+int count_set_bit(int x){
+    int bits = 0;
+    while(x != 0){
+        bits += x&1;
+        x >>= 1;
+    }
+    return bits;
+}
+
 int main(){
     int x = 20;
 
@@ -16,11 +25,7 @@ int main(){
 
     //Method 2
     x = 20;
-    int bits = 0;
-    while(x != 0){
-        bits += x&1;
-        x >>= 1;
-    }
+    int bits = count_set_bit(x);
     std::cout << "its set bit count: " << bits << std::endl;
     return 0;
 }
@@ -31,3 +36,4 @@ its set bit count: 2
 output in index order: 00101
 its set bit count: 2
 */
+
