@@ -3,43 +3,71 @@
 #include <vector>
 #include <algorithm> //set_symmetric_difference
 
-using namespace std;
-
+//http://www.cplusplus.com/reference/algorithm/set_union/
 
 int main()
 {
-    set<char> s1, s2;
-    vector<char> v(10); //need to reserve places
-    vector<char>::iterator v_it;
+    std::set<char> s1, s2;
+    std::vector<char> v(10); //need to reserve places
+    std::vector<char>::iterator v_it;
     
-    s1.insert('a');
-    s1.insert('b');
-    s1.insert('c');
     s1.insert('d');
+    s1.insert('a');
+    s1.insert('c');
+    s1.insert('b');
+
+    std::cout << "s1: " << std::endl;
+    std::copy(s1.begin(), s1.end(), std::ostream_iterator<char>(std::cout, " "));
+    std::cout << std::endl;
     
-    s2.insert('b');
     s2.insert('c');
     s2.insert('e');
+    s2.insert('b');
+
+    std::cout << "s2: " << std::endl;
+    std::copy(s2.begin(), s2.end(), std::ostream_iterator<char>(std::cout, " "));
+    std::cout << std::endl;
     
-    cout << "intersection:" << endl;
+    std::cout << "intersection:" << std::endl;
     v_it = set_intersection(s1.begin(), s1.end(), s2.begin(), s2.end(), v.begin());
     //resize it to retain only the meaningful values
     v.resize(v_it-v.begin());
     for(auto e : v){
-        cout << e << " ";
+        std::cout << e << " ";
     }
-    cout << endl;
+    std::cout << std::endl;
     
+    std::cout << "union:" << std::endl;
+    v.resize(10);
+    v_it = set_union(s1.begin(), s1.end(), s2.begin(), s2.end(), v.begin());
+    //resize it to retain only the meaningful values
+    v.resize(v_it-v.begin());
+    for(auto e : v){
+        std::cout << e << " ";
+    }
+    std::cout << std::endl;
     
-    cout << "symmetric difference:" << endl;
+    std::cout << "symmetric difference:" << std::endl;
     v.resize(10);
     v_it = set_symmetric_difference(s1.begin(), s1.end(), s2.begin(), s2.end(), v.begin());
     v.resize(v_it-v.begin());
     for(auto e : v){
-        cout << e << " ";
+        std::cout << e << " ";
     }
-    cout << endl;
+    std::cout << std::endl;
     
     return 0;
 }
 
+/*
+s1: 
+a b c d 
+s2: 
+b c e 
+intersection:
+b c 
+union:
+a b c d e 
+symmetric difference:
+a d e 
+*/
