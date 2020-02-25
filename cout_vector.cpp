@@ -10,6 +10,7 @@ int main() {
         myvec.push_back(i);
 
     std::copy(myvec.begin(), myvec.end(), std::ostream_iterator<int>(std::cout, " "));
+    std::cout << std::endl;
 
     return 0;
 }
