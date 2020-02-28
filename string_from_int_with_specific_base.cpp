@@ -5,6 +5,8 @@
 #include <iostream>
 #include <locale>
 
+//https://stackoverflow.com/questions/6478745/custom-stream-manipulator-for-streaming-integers-in-any-base
+
 namespace StreamManip {
 
 // Define a base manipulator type, its what the built in stream manipulators
