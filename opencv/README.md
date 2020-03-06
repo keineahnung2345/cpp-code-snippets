@@ -12,6 +12,12 @@ Check the file `<opencv_root_dir>/include/opencv2/core/version.hpp`:
 #define CV_VERSION_STATUS   "-openvino"
 ```
 
+or according to [Find OpenCV Version Installed on Ubuntu [duplicate]](https://stackoverflow.com/questions/8804064/find-opencv-version-installed-on-ubuntu/12536170):
+
+```sh
+pkg-config --modversion opencv
+```
+
 ## g++
 compile, including opencv headers and libraries
 [compiling opencv in c++](https://stackoverflow.com/questions/9094941/compiling-opencv-in-c)
