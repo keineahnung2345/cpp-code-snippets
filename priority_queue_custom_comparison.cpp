@@ -4,14 +4,12 @@
 
 using namespace std;
 
-class mycomparison
-{
+class mycomparison{
 public:
-  mycomparison(){}
-  bool operator() (const int& lhs, const int&rhs) const
-  {
-    return (abs(lhs)>abs(rhs));
-  }
+    mycomparison(){}
+    bool operator() (const int& lhs, const int&rhs) const{
+        return (abs(lhs)>abs(rhs));
+    }
 };
 
 int main()
