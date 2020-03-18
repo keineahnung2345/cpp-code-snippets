@@ -7,11 +7,12 @@ using MapIterator = typename std::map<Key,Value>::const_iterator;
 
 //https://codereview.stackexchange.com/questions/222587/java-treemap-floorkey-equivalent-for-stdmap
 template<typename Key, typename Value>
-int floorKey(const std::map<Key,Value>& input, const Key& key){
+Key floorKey(const std::map<Key,Value>& input, const Key& key){
     MapIterator<Key, Value> it = input.upper_bound(key);
     if (it != input.begin()) {
         return (--it)->first;
     } else {
+        //assume Key is int
         return -1;
     }
 }
