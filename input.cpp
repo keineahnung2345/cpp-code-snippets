@@ -4,18 +4,18 @@
 using namespace std;
 
 int main() {
-	int a;
-	int n = 2;
+    int a;
+    int n = 2;
     while(cin >> a){
         cout << "Read number: " << a << endl;
         if(--n == 0) break;
     }
 	
-	string str;
-	while(getline(cin, str)){
-		cout << str << endl;
-	}
-	return 0;
+    string str;
+    while(getline(cin, str)){
+        cout << str << endl;
+    }
+    return 0;
 }
 
 /*
