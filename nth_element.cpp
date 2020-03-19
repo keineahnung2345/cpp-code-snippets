@@ -1,8 +1,13 @@
 #include <vector>
 #include <iostream>
+#include <algorithm> //nth_element
 
 //https://en.cppreference.com/w/cpp/algorithm/nth_element
 
+/*
+It only put the nth largest/smallest element in the right position
+, other elements may not in sorted position!
+*/
 int main(){
     std::vector<int> myvec = {1,3,6,2,9,5};
     int n = 3;
@@ -15,4 +20,4 @@ int main(){
     return 0;
 }
 
-//The 3 largest values are : 9 6 5
+//The 3 largest values are : 6 9 5 
