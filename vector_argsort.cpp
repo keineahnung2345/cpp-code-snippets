@@ -26,21 +26,21 @@ int main()
 {
     vector<int> v = {5,2,8,0,1,9};
     
-	copy(v.begin(), v.end(), ostream_iterator<int>(cout, " "));
+    copy(v.begin(), v.end(), ostream_iterator<int>(cout, " "));
     cout << endl;
     
     cout << "nth smallest element is current at what position?" << endl;
     vector<size_t> ixs = sort_indexes(v);
-	copy(ixs.begin(), ixs.end(), ostream_iterator<int>(cout, " "));
+    copy(ixs.begin(), ixs.end(), ostream_iterator<int>(cout, " "));
     cout << endl;
     
     cout << "The element should be put into ?th position:" << endl;
     vector<size_t> putIxs(v.size());
     for(int i = 0; i < v.size(); i++){
-    	int ix = ixs[i];
-    	putIxs[ix] = i;
+        int ix = ixs[i];
+        putIxs[ix] = i;
     }
-	copy(putIxs.begin(), putIxs.end(), ostream_iterator<int>(cout, " "));
+    copy(putIxs.begin(), putIxs.end(), ostream_iterator<int>(cout, " "));
     cout << endl;
 
     return 0;
