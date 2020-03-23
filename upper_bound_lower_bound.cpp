@@ -1,11 +1,10 @@
 #include <iostream>
 #include <vector>
-#include <algorithm> //upper_bound, lower_
+#include <algorithm> //upper_bound, lower_bound
 
 using namespace std;
 
 int main() {
-    // your code goes here
     vector<int> myvec = {-1,2,3,4,6,9,10};
     vector<int> tosearches = {-2,4,5,11};
 	
