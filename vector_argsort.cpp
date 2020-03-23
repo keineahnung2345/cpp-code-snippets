@@ -2,6 +2,7 @@
 #include <vector>
 #include <numeric>      // std::iota
 #include <algorithm>    // std::sort
+#include <iterator>     // std::ostream_iterator
 
 using namespace std;
 
@@ -24,25 +25,31 @@ vector<size_t> sort_indexes(const vector<T> &v) {
 int main()
 {
     vector<int> v = {5,2,8,0,1,9};
-    vector<size_t> ixs = sort_indexes(v);
     
-    //5 2 8 0 1 9 
-    for(auto e : v){
-        cout << e << " ";
-    }
+	copy(v.begin(), v.end(), ostream_iterator<int>(cout, " "));
     cout << endl;
     
-    /**
-     * index: 3, value: 0
-    index: 4, value: 1
-    index: 1, value: 2
-    index: 0, value: 5
-    index: 2, value: 8
-    index: 5, value: 9
-    **/
-    for (auto i: ixs) {
-        cout << "index: " << i << ", value: " << v[i] << endl;
+    cout << "nth smallest element is current at what position?" << endl;
+    vector<size_t> ixs = sort_indexes(v);
+	copy(ixs.begin(), ixs.end(), ostream_iterator<int>(cout, " "));
+    cout << endl;
+    
+    cout << "The element should be put into ?th position:" << endl;
+    vector<size_t> putIxs(v.size());
+    for(int i = 0; i < v.size(); i++){
+    	int ix = ixs[i];
+    	putIxs[ix] = i;
     }
+	copy(putIxs.begin(), putIxs.end(), ostream_iterator<int>(cout, " "));
+    cout << endl;
 
     return 0;
 }
+
+/*
+5 2 8 0 1 9 
+nth smallest element is current at what position?
+3 4 1 0 2 5 
+The element should be put into ?th position:
+3 2 4 0 1 5
+*/
