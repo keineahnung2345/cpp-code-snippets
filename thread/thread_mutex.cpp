@@ -4,7 +4,7 @@
 
 #define LINUX
 //MODE 1: no lock, MODE 2 and 3 : two different way of using lock
-#define MODE 3
+#define MODE 1
 
 #ifdef LINUX
     #include <thread>
@@ -17,7 +17,7 @@
 #endif
 
 #if MODE == 2 || MODE == 3
-mutex gMutex;
+std::mutex gMutex;
 #endif
 
 void OutputValue(int n) {
@@ -25,7 +25,7 @@ void OutputValue(int n) {
 #elif MODE == 2
     gMutex.lock();
 #elif MODE == 3
-    unique_lock<mutex> mLock(gMutex);
+    std::unique_lock<std::mutex> mLock(gMutex);
 #endif
 
     std::cout << "Number:";
