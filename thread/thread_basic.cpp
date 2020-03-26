@@ -41,7 +41,7 @@ void func(){
             ans += (double)i/j;
         }
     }
-    std::cout << ans << std::endl;
+    std::cout << "func calculates: " << ans << std::endl;
 }
 
 void func2(int i){
@@ -73,7 +73,6 @@ int main(){
 
     //10 is the parameter of func2
     thread t2(func2, 10);
-    std::cout << "hello world" << std::endl;
     t2.join();
 
     MyFunctor fctor;
@@ -93,3 +92,12 @@ int main(){
     t5.join();
     return 0;
 }
+
+/*
+func calculates: 3.93261e+006
+func2 receives 10
+After t3's execution, count is 0
+After t4's execution, count is 1
+hardware concurrency: 1
+thread 2406656 sleeping...
+*/
