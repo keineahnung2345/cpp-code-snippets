@@ -1,5 +1,7 @@
 #include <iostream>
 
+//https://kheresy.wordpress.com/2012/07/11/multi-thread-programming-in-c-thread-p2/
+
 #define LINUX
 //MODE 1: no lock, MODE 2 and 3 : two different way of using lock
 #define MODE 3
