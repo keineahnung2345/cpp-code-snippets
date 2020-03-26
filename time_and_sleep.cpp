@@ -1,6 +1,7 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
+#include <random>
 
 // method 2 : chrono
 long get_time(){
@@ -44,6 +45,12 @@ int main(){
     end time: 1571821794663
     it takes: 4606 milliseconds.
     */
+
+    //sleep for a random period
+    //https://stackoverflow.com/questions/7577452/random-time-delay
+    std::mt19937_64 eng{std::random_device{}()};  // or seed however you want
+    std::uniform_int_distribution<> dist{10, 100};
+    std::this_thread::sleep_for(std::chrono::milliseconds{dist(eng)});
 
     // method 3 : clock, not accurate
     //https://www.geeksforgeeks.org/clock-function-in-c-c/
