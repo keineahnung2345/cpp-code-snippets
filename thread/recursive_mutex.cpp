@@ -6,6 +6,7 @@
 
 #ifdef LINUX
     #include <thread>
+    #include <mutex>
     using namespace std;
 #else
     #include "mingw-std-threads/mingw.thread.h"
