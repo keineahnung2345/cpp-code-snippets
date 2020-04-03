@@ -6,6 +6,7 @@ template<typename Key, typename Value>
 using MapIterator = typename std::map<Key,Value>::const_iterator;
 
 //https://codereview.stackexchange.com/questions/222587/java-treemap-floorkey-equivalent-for-stdmap
+//The floorKey() method is used to return the greatest key less than or equal to given key from the parameter.
 template<typename Key, typename Value>
 Key floorKey(const std::map<Key,Value>& input, const Key& key){
     /*
