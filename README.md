@@ -4,6 +4,16 @@ Some useful C++ code snippets
 ## Compile
 [Compiling with g++](https://www.geeksforgeeks.org/compiling-with-g-plus-plus/)
 
+### Check g++ default c++ standard version
+[Which C++ standard is the default when compiling with g++?](https://stackoverflow.com/questions/44734397/which-c-standard-is-the-default-when-compiling-with-g)
+```sh
+g++ -dM -E -x c++  /dev/null | grep -F __cplusplus
+```
+Sample output:
+```
+#define __cplusplus 199711L
+```
+
 ### Compile, specify c++ version
 [to_string is not a member of std, says g++ (mingw)](https://stackoverflow.com/questions/12975341/to-string-is-not-a-member-of-std-says-g-mingw)
 ```sh
