@@ -9,5 +9,6 @@ int main(){
     cv::namedWindow( "Display window", cv::WINDOW_AUTOSIZE);// Create a window for display.
     cv::imshow( "Display window", img);                   // Show our image inside it.
     cv::waitKey(0);
+    cv::destroyAllWindows();
     return 0;
 }
