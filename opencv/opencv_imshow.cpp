@@ -1,0 +1,11 @@
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <iostream>
+
+int main(){
+    cv::Mat img = cv::imread("../Lenna.png", 0);
+    cv::namedWindow( "Display window", cv::WINDOW_AUTOSIZE);// Create a window for display.
+    cv::imshow( "Display window", img);                   // Show our image inside it.
+    cv::waitKey(0);
+    return 0;
+}
