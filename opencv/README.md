@@ -32,8 +32,12 @@ for OpenCV4.
 
 If the above fails, use the following:
 ```sh
-g++ xxx.cpp -I /usr/local/include/opencv4 -L /usr/local/lib -lopencv_imgcodecs -lopencv_core -std=c++11
+g++ xxx.cpp -I /usr/local/include/opencv4 -L /usr/local/lib -lopencv_imgcodecs -lopencv_core -lopencv_imgproc -lopencv_highgui -std=c++11
 ```
+
+`opencv_imgproc` is for drawing lines, circles, ...
+
+`opencv_highgui` is for generating GUI.
 
 In `xxx.cpp`, it includes `opencv2/imgcodecs.hpp`, so we need to link with `opencv_imgcodecs`.
 We also need to link `opencv_core` because otherwise it gives the following error:
