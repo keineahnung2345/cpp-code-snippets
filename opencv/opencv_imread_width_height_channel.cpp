@@ -8,5 +8,6 @@ int main()
     cv::Mat src = cv::imread("path_to_image");
     std::cout << "Width : " << src.cols << std::endl;
     std::cout << "Height: " << src.rows << std::endl;
+    std::cout << "Channel : " << src.channels() << std::endl;
     return 0;
 }
