@@ -8,6 +8,9 @@ int main(){
     std::cout << std::setw(5);
     std::cout << 0 << std::endl;
     std::cout << -1 << std::endl; //setw won't work on this line
+    std::cout << std::setw(5) << std::fixed << std::setprecision(2) << 3.14159;
+    std::cout << std::setw(5) << std::fixed << std::setprecision(2) << 3.14159;
+    std::cout << std::endl;
     return 0;
 }
 
@@ -17,4 +20,5 @@ int main(){
      1
     0
 -1
+ 3.14 3.14
 */
