@@ -17,6 +17,13 @@ class Point{
 static bool point_comparator(Point &a, Point &b)
 {
     //the smaller the former
+    /*
+    Note that we must use "<", not "<=" here,
+    because the predicate must satisfy Strict Weak Ordering,
+    which includes the rule "Irreflexivity: f(x, x) must be false."
+    Otherwise, there will be a heap-buffer-overflow error.
+    https://www.boost.org/sgi/stl/StrictWeakOrdering.html
+    */
     return a.x * a.x + a.y * a.y < b.x * b.x + b.y * b.y;
 }
 
