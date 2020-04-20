@@ -5,6 +5,8 @@
 
 using namespace std;
 
+//https://stackoverflow.com/questions/15783010/c-template-double-stdcomplexdouble-norm-and-product
+
 template <typename T>
 double getNorm(vector<vector<T>>& vv, int row, int col){};
 
