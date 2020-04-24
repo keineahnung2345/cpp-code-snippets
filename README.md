@@ -215,6 +215,13 @@ Another method: [cmake find_package specify path](https://stackoverflow.com/ques
 #end
 ```
 
+### include guard
+Naming convention for include guard: [How to properly name include guards in c++ [closed]](https://stackoverflow.com/questions/49688518/how-to-properly-name-include-guards-in-c)
+
+```
+For a file named "baz.h" in a project named "foo", in submodule "bar", I'd name the guard FOO_BAR_BAZ_H.
+```
+
 ### #pragma once
 ```cpp
 #ifndef __SOMEFILE_H__
