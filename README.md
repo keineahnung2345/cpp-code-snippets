@@ -234,3 +234,58 @@ can be replaced with:
 #pragma once
 // ...
 ```
+
+## mimic of python if __name__ == '__main__':
+
+In Python, say we have `foo.py` and `bar.py`, and they both have `if __name__ == '__main__':`(we can think this as `main` function in C++). We can easily `import foo` from `bar.py` or `import bar` from `foo.py` without any problem.
+
+But in C++, if `foo.cpp` and `bar.cpp` both have `main` fucntion, then when they are compiled together(`g++ foo.cpp bar.cpp`), there will be the linker error:
+
+```
+multiple definition of `main'
+```
+
+Indicating that there are multiple functions named `main` are being linked together. 
+
+So how to only enable one `main` function when compiling multiple `.cpp` files together? 
+
+Following is a workaround:
+
+In `foo.cpp`:
+
+```cpp
+#include "foo.h"
+#include "bar.h"
+
+int foo(){
+    return 0;
+}
+
+#ifdef FOO
+int main(){
+    return 0;
+};
+#endif
+```
+
+And in `bar.cpp`:
+
+```cpp
+int bar(){
+    return 0;
+}
+
+#ifdef BAR
+int main(){
+    return 0;
+};
+#endif
+```
+
+Wrap their `main` function with the macro `ifdef-endif`, and when compiling them, use:
+
+```sh
+g++ -DFOO foo.cpp bar.cpp
+```
+
+to only activate `foo.cpp`'s `main` function!
