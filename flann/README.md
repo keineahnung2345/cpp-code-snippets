@@ -28,7 +28,7 @@ No SOURCES given to target: flann_cpp
 No SOURCES given to target: flann
 ```
 
-A workaround is to create `empty.cpp` under `src/cpp`,
+Following [heirecka's solution](https://github.com/mariusmuja/flann/issues/369#issuecomment-378421544), a workaround is to create `empty.cpp` under `src/cpp`,
 
 and then revise `src/cpp/CMakeLists.txt`, change its 
 
