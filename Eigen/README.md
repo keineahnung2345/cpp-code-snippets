@@ -9,3 +9,10 @@ Symlink the Eigen folder into `/usr/local/include`:
 ```sh
 ln -s /xxx/eigen-3.3.4/Eigen /usr/local/include/Eigen
 ```
+
+Also:
+
+```sh
+ln -s /xxx/eigen-3.3.4/unsupported/ /usr/local/include/unsupported
+```
+otherwise when we `make` `pcl`, it will shows `fatal error: unsupported/Eigen/NonLinearOptimization: No such file or directory`.
