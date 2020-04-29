@@ -34,7 +34,7 @@ Bootstrap, specify the libraries you want to install:
 # recommended installing with python3
 ./bootstrap.sh --prefix=<boost_installation_dir> --with-libraries=python --with-python-version=3.5
 ```
-Note that `system`, `filesystem`, `thread`, `date_time`, `iostreams` are required by `pcl`.
+Note that `system`, `filesystem`, `thread`, `date_time`, `iostreams` are required by `pcl`(they can be concanated with `,` in the above command).
 
 Finally install:
 ```sh
