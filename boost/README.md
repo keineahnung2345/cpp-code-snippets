@@ -23,6 +23,21 @@ Finally install:
 ./b2 install
 ```
 
+If it shows the error:
+```
+fatal error: pyconfig.h: No such file or directory
+```
+Then we need to install `python3-dev`:
+```sh
+apt-get install -y python3-dev
+```
+After installing, we can check if `pyconfig.h` exists or not by:
+```sh
+find /usr -name pyconfig.h
+```
+
+
+
 ## use it in another project
 In CMakeLists.txt(adopted from https://github.com/ipkn/crow/blob/master/CMakeLists.txt):
 ```
