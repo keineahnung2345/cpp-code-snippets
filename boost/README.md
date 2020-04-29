@@ -2,6 +2,19 @@
 boost contains sorts of functions, including uuid.
 
 ## installation
+Prerequisite: `python3-dev`:
+```sh
+apt-get install -y python3-dev
+```
+If there is no `python3-dev` installed, it will show the following error in one of the following steps:
+```
+fatal error: pyconfig.h: No such file or directory
+```
+After the installation, we can check if `pyconfig.h` exists or not by:
+```sh
+find /usr -name pyconfig.h
+```
+
 First download `boost_1_xx_0.tar.gz` from https://www.boost.org/users/history/, and unzip it.
 
 Check what libraries boost contains:
@@ -16,27 +29,13 @@ Bootstrap, specify the libraries you want to install:
 ./bootstrap.sh --prefix=<boost_installation_dir> --with-libraries=date_time
 # https://stackoverflow.com/questions/5539557/boost-and-python-3-x
 # without the "--with-python-version" flag, it could find python2 rather than python3
+# recommended installing with python3
 ./bootstrap.sh --prefix=<boost_installation_dir> --with-libraries=python --with-python-version=3.5
 ```
 Finally install:
 ```sh
 ./b2 install
 ```
-
-If it shows the error:
-```
-fatal error: pyconfig.h: No such file or directory
-```
-Then we need to install `python3-dev`:
-```sh
-apt-get install -y python3-dev
-```
-After installing, we can check if `pyconfig.h` exists or not by:
-```sh
-find /usr -name pyconfig.h
-```
-
-
 
 ## use it in another project
 In CMakeLists.txt(adopted from https://github.com/ipkn/crow/blob/master/CMakeLists.txt):
