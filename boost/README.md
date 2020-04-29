@@ -27,11 +27,15 @@ Bootstrap, specify the libraries you want to install:
 ./bootstrap.sh --prefix=<boost_installation_dir> --with-libraries=thread
 ./bootstrap.sh --prefix=<boost_installation_dir> --with-libraries=chrono
 ./bootstrap.sh --prefix=<boost_installation_dir> --with-libraries=date_time
+./bootstrap.sh --prefix=<boost_installation_dir> --with-libraries=filesystem
+./bootstrap.sh --prefix=<boost_installation_dir> --with-libraries=iostreams
 # https://stackoverflow.com/questions/5539557/boost-and-python-3-x
 # without the "--with-python-version" flag, it could find python2 rather than python3
 # recommended installing with python3
 ./bootstrap.sh --prefix=<boost_installation_dir> --with-libraries=python --with-python-version=3.5
 ```
+Note that `system`, `filesystem`, `thread`, `date_time`, `iostreams` are required by `pcl`.
+
 Finally install:
 ```sh
 ./b2 install
