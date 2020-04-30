@@ -9,7 +9,7 @@ First download `pcl-pcl-1.8.1.tar.gz`(or other newer versions) from [pcl release
 Then:
 ```sh
 cd pcl-pcl-1.8.1 && mkdir build && cd build
-cmake -DCMAKE_BUILD_TYPE=Release ..
+cmake -DCMAKE_BUILD_TYPE=Release .. #or use "ccmake .." to choose what to build
 make -j2
 sudo make -j2 install
 ```
