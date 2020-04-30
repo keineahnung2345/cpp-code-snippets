@@ -86,6 +86,9 @@ add_definitions(-D MYVAR)
 
 `PROJECT_SOURCE_DIR`: the inner-most folder containing CMakeLists.txt with `project()` command
 
+#### project structure
+[CMake with include and source paths - basic setup](https://stackoverflow.com/questions/8304190/cmake-with-include-and-source-paths-basic-setup)
+
 ### make, specify number of jobs as the number of processing units available
 ```sh
 make -j $(nproc)
