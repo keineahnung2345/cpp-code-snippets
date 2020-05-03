@@ -20,6 +20,18 @@ int main() {
         s.replace(pos, toReplace.length(), newText);
     }
     std::cout << "replace all: " << s << std::endl;
+    
+    s = "hello, hello, hello";
+    std::cout << "old string: " << s << std::endl;
+    
+    char cToReplace = 'e';
+    char cNewText = 'a';
+    pos = 0;
+    while((pos = s.find(cToReplace, pos)) != std::string::npos){
+        //the 3rd argument means cToReplace is replaced with how man cNewText
+        s.replace(pos, 1, 1, cNewText);
+    }
+    std::cout << "replace all: " << s << std::endl;
     return 0;
 }
 
@@ -27,4 +39,6 @@ int main() {
 old string: Bob hit a ball, the hit ball flew far after it was hit.
 replace one: Bob split a ball, the hit ball flew far after it was hit.
 replace all: Bob split a ball, the split ball flew far after it was split.
+old string: hello, hello, hello
+replace all: hallo, hallo, hallo
 */
