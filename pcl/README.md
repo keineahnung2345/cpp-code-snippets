@@ -3,6 +3,7 @@ The [Point Cloud Library (PCL)](https://github.com/PointCloudLibrary/pcl) is a s
 
 ## Installation
 Prerequisite: [boost](https://github.com/keineahnung2345/cpp-code-snippets/blob/master/boost/README.md), [Eigen](https://github.com/keineahnung2345/cpp-code-snippets/blob/master/Eigen/README.md), [flann](https://github.com/keineahnung2345/cpp-code-snippets/blob/master/flann/README.md) and [VTK](https://github.com/keineahnung2345/linux-commands/blob/master/Linux%20packages.md#vtk).
+([Qhull](https://github.com/keineahnung2345/cpp-code-snippets/tree/master/qhull) is required if you want to use `pcl_surface`.)
 
 First download `pcl-pcl-1.8.1.tar.gz`(or other newer versions) from [pcl release page](https://github.com/PointCloudLibrary/pcl/releases), and then untar it.
 
