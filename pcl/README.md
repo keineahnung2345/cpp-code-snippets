@@ -15,6 +15,8 @@ make -j2
 sudo make -j2 install
 ```
 
+After installation, there will be many executable files in `/usr/local/bin`, and `pcl_viewer` is one of them which is useful.
+
 ### Troubleshooting
 
 ```
