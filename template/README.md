@@ -22,3 +22,5 @@ collect2: error: ld returned 1 exit status
 ```
 
 But according to [Why can templates only be implemented in the header file?](https://stackoverflow.com/questions/495021/why-can-templates-only-be-implemented-in-the-header-file), we can also use another method: by writing template function's implementation in `xxx.tpp` and then include it in `xxx.h`, see `ex3` for example.
+
+Another useful link: [C++ template declarations vs. definitions](http://warp.povusers.org/programming/template_declarations.html).
