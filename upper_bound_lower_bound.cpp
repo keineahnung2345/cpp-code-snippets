@@ -32,6 +32,27 @@ int main() {
     }
     cout << endl;
 	
+    cout << "upper_bound(the largest number <= x)" << endl;
+    for(int tosearch : tosearches){
+        auto it = upper_bound(myvec.begin(), myvec.end(), tosearch);
+        if(it == myvec.begin()){
+            cout << "cannot find number smaller or equal to " << tosearch << endl;
+        }else{
+        	/*
+        	it points to the first element > x,
+        	prev(it) points to the last element <= x!!
+        	*/
+        	it = prev(it); //!!!
+            cout << tosearch << " " << (it-myvec.begin()) << endl;
+        }
+    }
+	
+    cout << endl << "finding in ..." << endl;
+    for(int e : myvec){
+        cout << e << " ";
+    }
+    cout << endl;
+	
     cout << "lower_bound(the smallest number >= x)..." << endl;
     for(int tosearch : tosearches){
         auto it = lower_bound(myvec.begin(), myvec.end(), tosearch);
@@ -43,7 +64,7 @@ int main() {
     }
     cout << endl;
     
-    cout << "demo of lower_bound with custome comparison function..." << endl;
+    cout << "demo of lower_bound with custom comparison function..." << endl;
     vector<vector<int>> intervals = {{1,5}, {3,6}, {2,4}, {4, 7}, {5,5}};
     sort(intervals.begin(), intervals.end());
     
@@ -79,13 +100,21 @@ cannot find number larger than 11
 
 finding in ...
 -1 2 3 4 6 9 10 
+upper_bound(the largest number <= x)
+cannot find number smaller or equal to -2
+4 3
+5 3
+11 6
+
+finding in ...
+-1 2 3 4 6 9 10 
 lower_bound(the smallest number >= x)...
 -2 0
 4 3
 5 4
 cannot find number larger than or equal to 11
 
-demo of lower_bound with custome comparison function...
+demo of lower_bound with custom comparison function...
 finding in ...
 [1, 5] [2, 4] [3, 6] [4, 7] [5, 5] 
 found an interval whose starting point >= 3 at 2
