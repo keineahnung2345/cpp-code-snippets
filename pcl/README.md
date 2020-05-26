@@ -29,3 +29,22 @@ vtk-8.2/vtkSmartPointer.h:113:40: error: invalid static_cast from type ‘vtkObj
 ```
 
 According to [Error building pcl::visualization](https://github.com/PointCloudLibrary/pcl/issues/2155) and [编译pcl1.9.1中出现error: ‘class vtkDataSetMapper’ has no member named ‘ImmediateModeRenderingOff‘问题的解决方法](https://blog.csdn.net/l1216766050/article/details/91346776), it can be solved by update PCL version(like 1.10.1).
+
+## use it in another project
+
+Reference to [Using PCL in your own project](https://pcl-tutorials.readthedocs.io/en/latest/using_pcl_pcl_config.html):
+
+```
+set (CMAKE_CXX_STANDARD 11)
+cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
+project(MY_GRAND_PROJECT)
+# specify the components required
+#find_package(PCL 1.10 REQUIRED COMPONENTS common io)
+# or use all available components
+find_package(PCL 1.10 REQUIRED)
+include_directories(${PCL_INCLUDE_DIRS})
+link_directories(${PCL_LIBRARY_DIRS})
+add_definitions(${PCL_DEFINITIONS})
+add_executable(<NAME> <NAME>.cpp)
+target_link_libraries(<NAME> ${PCL_LIBRARIES})
+```
