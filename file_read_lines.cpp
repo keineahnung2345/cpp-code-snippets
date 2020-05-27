@@ -4,6 +4,7 @@
 #include <string>
 
 //https://stackoverflow.com/questions/7868936/read-file-line-by-line-using-ifstream-in-c
+//https://stackoverflow.com/questions/43956124/c-while-loop-to-read-from-input-file
 int main()
 {
     std::ifstream infile("a.txt");
@@ -15,6 +16,16 @@ int main()
     {
         std::cout << a << " " <<  b << std::endl;
     }
+    
+    /*
+    note that using:
+    while(infile){
+        infile >> a;
+        infile >> b;
+    }
+    will give you one extra line!
+    that's because EOF will be set "after" you read to end of the file
+    */
     
     infile.close();
     
