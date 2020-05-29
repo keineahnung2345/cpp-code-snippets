@@ -63,14 +63,14 @@ int main(){
     clock_t end3 = clock();
     std::cout << "end time: " << end3 << std::endl;
     std::cout << "CLOCKS_PER_SEC: " << CLOCKS_PER_SEC << std::endl;
-    std::cout << "it takes: " << (float)(end3 - start3)/CLOCKS_PER_SEC << " milliseconds." << std::endl;
+    std::cout << "it takes: " << (float)(end3 - start3)*1000/CLOCKS_PER_SEC << " milliseconds." << std::endl;
 
     /*
-    start time: 763
+    start time: 3160
     now sleep for 4605 milliseconds.
-    end time: 802
+    end time: 3186
     CLOCKS_PER_SEC: 1000000
-    it takes: 3.9e-05 milliseconds.
+    it takes: 0.026 milliseconds.
     */
     return 0;
 }
