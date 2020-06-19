@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 
+//https://www.geeksforgeeks.org/multiplicative-inverse-under-modulo-m/
+//this works for modInverse(a, m) only when m is prime!
+
 // To compute x^y under modulo m 
 int power(int x, unsigned int y, unsigned int m){ 
     if (y == 0) 
@@ -26,7 +29,17 @@ int modInverse(int a, int m){
         return -1;
     }else{ 
         // If a and m are relatively prime, then modulo inverse 
-        // is a^(m-2) mode m 
+        // is a^(m-2) mod m 
+        /*
+        From Fermat's little theorem,
+        when a is not divisible by p,
+        a^(p-1) mod m = 1
+        here we choose p as m,
+        so a^(m-1) mod m = 1
+        this is equal to saying that
+        a * a^(m-2) mod m = 1
+        so we can say that a^(m-2) mod m is the inverse of a
+        */
         return power(a, m-2, m);
     } 
 };
