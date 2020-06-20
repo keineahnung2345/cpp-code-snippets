@@ -3,6 +3,7 @@
 #include <opencv2/imgproc.hpp> //line
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/core/hal/interface.h> //CV_8UC3
+#include <opencv2/highgui.hpp> //namedWindow
 #include <iostream>
 #include <map>
 
