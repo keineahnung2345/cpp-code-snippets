@@ -26,6 +26,7 @@ int gcd(int a, int b){
 int modInverse(int a, int m){ 
     int g = gcd(a, m); 
     if (g != 1){
+        //Fermat's little theorem only works only when m is prime!
         return -1;
     }else{ 
         // If a and m are relatively prime, then modulo inverse 
