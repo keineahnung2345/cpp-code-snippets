@@ -1,6 +1,7 @@
 #include <iostream>
 #include <set>
 #include <vector>
+#include <iterator> //ostream_iterator
 #include <algorithm> //set_symmetric_difference
 
 //http://www.cplusplus.com/reference/algorithm/set_union/
@@ -32,9 +33,7 @@ int main()
     v_it = set_intersection(s1.begin(), s1.end(), s2.begin(), s2.end(), v.begin());
     //resize it to retain only the meaningful values
     v.resize(v_it-v.begin());
-    for(auto e : v){
-        std::cout << e << " ";
-    }
+    std::copy(v.begin(), v.end(), std::ostream_iterator<char>(std::cout, " "));
     std::cout << std::endl;
     
     std::cout << "union:" << std::endl;
@@ -42,18 +41,21 @@ int main()
     v_it = set_union(s1.begin(), s1.end(), s2.begin(), s2.end(), v.begin());
     //resize it to retain only the meaningful values
     v.resize(v_it-v.begin());
-    for(auto e : v){
-        std::cout << e << " ";
-    }
+    std::copy(v.begin(), v.end(), std::ostream_iterator<char>(std::cout, " "));
+    std::cout << std::endl;
+    
+    std::cout << "difference:" << std::endl;
+    v.resize(10);
+    v_it = set_difference(s1.begin(), s1.end(), s2.begin(), s2.end(), v.begin());
+    v.resize(v_it-v.begin());
+    std::copy(v.begin(), v.end(), std::ostream_iterator<char>(std::cout, " "));
     std::cout << std::endl;
     
     std::cout << "symmetric difference:" << std::endl;
     v.resize(10);
     v_it = set_symmetric_difference(s1.begin(), s1.end(), s2.begin(), s2.end(), v.begin());
     v.resize(v_it-v.begin());
-    for(auto e : v){
-        std::cout << e << " ";
-    }
+    std::copy(v.begin(), v.end(), std::ostream_iterator<char>(std::cout, " "));
     std::cout << std::endl;
     
     return 0;
@@ -68,6 +70,8 @@ intersection:
 b c 
 union:
 a b c d e 
+difference:
+a d
 symmetric difference:
 a d e 
 */
