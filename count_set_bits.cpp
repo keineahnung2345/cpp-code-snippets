@@ -27,6 +27,11 @@ int main(){
     x = 20;
     int bits = count_set_bit(x);
     std::cout << "its set bit count: " << bits << std::endl;
+    
+    //Method 3;
+    x = 20;
+    bits = __builtin_popcount(x);
+    std::cout << "its set bit count: " << bits << std::endl;
     return 0;
 }
 
@@ -35,5 +40,5 @@ bitset object: 10100
 its set bit count: 2
 output in index order: 00101
 its set bit count: 2
+its set bit count: 2
 */
-
