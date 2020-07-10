@@ -1,0 +1,4 @@
+mybool = true;
+myint = 123;
+myfloat = 3.14;
+mystring = "abc";
