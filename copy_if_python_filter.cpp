@@ -4,6 +4,8 @@
  
 using namespace std;
  
+//https://stackoverflow.com/questions/21204676/modern-way-to-filter-stl-container
+
 int main() {
     vector<int> myvec = {1,2,3,4,5,6};
  
