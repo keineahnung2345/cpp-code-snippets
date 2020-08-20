@@ -3,6 +3,8 @@
 #include <cctype> //isalnum
 #include <algorithm> //remove_if
 
+//https://stackoverflow.com/questions/6319872/how-to-strip-all-non-alphanumeric-characters-from-a-string-in-c
+
 using namespace std;
 
 int main()
@@ -15,3 +17,5 @@ int main()
     cout << s << endl;
     return 0;
 }
+
+//abcdefghijklmn
