@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+//https://stackoverflow.com/questions/18972258/index-of-nth-occurrence-of-the-string
+
 int strpos(char* haystack, char* needle, int nth){
      //nth is 1-based
     char* res = haystack;
