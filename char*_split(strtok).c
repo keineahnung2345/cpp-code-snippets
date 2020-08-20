@@ -1,0 +1,34 @@
+#include <cstdio>
+#include <cstring>
+
+int main()
+{
+    char input[16] = "abc\rd\refg";
+    
+    for(char& c : input){
+        if(c == '\r'){
+            printf("\\r");
+        }else{
+            printf("%c", c);
+        }
+    }
+    printf("\n");
+    
+    char* delimeter = "\r";
+    char* p;
+
+    p = strtok(input, delimeter);
+
+    while(p){
+        printf("%s#", p);
+        p = strtok(NULL, delimeter);
+    }
+    
+    if(p)
+        printf("%s#", p);
+    
+    return 0;
+}
+
+//abc\rd\refg                                                                                                           
+//abc#d#efg#
