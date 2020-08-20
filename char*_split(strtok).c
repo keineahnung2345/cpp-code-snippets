@@ -1,6 +1,9 @@
 #include <cstdio>
 #include <cstring>
 
+//https://stackoverflow.com/questions/10349270/c-split-a-char-array-into-different-variables
+//https://stackoverflow.com/questions/6684976/how-do-i-print-escape-characters-as-characters
+
 int main()
 {
     char input[16] = "abc\rd\refg";
