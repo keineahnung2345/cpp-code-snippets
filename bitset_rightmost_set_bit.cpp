@@ -7,6 +7,7 @@ using namespace std;
 //https://www.electronics-tutorials.ws/binary/signed-binary-numbers.html
 //rightmost set bit
 //https://www.geeksforgeeks.org/position-of-rightmost-set-bit/
+//https://www.geeksforgeeks.org/find-significant-set-bit-number/
 //https://stackoverflow.com/questions/757059/position-of-least-significant-bit-that-is-set
 
 int main() {
