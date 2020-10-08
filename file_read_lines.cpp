@@ -32,14 +32,19 @@ int main()
     //Method 2
     infile.open ("a.txt", std::ifstream::in);
 
+    //https://stackoverflow.com/questions/37957080/can-i-use-2-or-more-delimiters-in-c-function-getline
+    //in Windows, we need both '\n' and '\r' as delimeter!
     std::string line;
-    while (std::getline(infile, line))
+    while (std::getline(infile, line, '\n'))
     {
-        std::istringstream iss(line);
-        int a, b;
-        if (!(iss >> a >> b)) { break; } // error
-    
-        std::cout << a << " " << b << std::endl;
+        std::stringstream ss(line);
+        while(std::getline(ss, line, '\r')){
+            std::istringstream iss(line);
+            int a, b;
+            if (!(iss >> a >> b)) { break; } // error
+
+            std::cout << a << " " << b << std::endl;
+        }
     }
 
     return 0;
