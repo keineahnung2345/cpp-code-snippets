@@ -5,7 +5,7 @@ using namespace std;
 
 //https://stackoverflow.com/questions/4654636/how-to-determine-if-a-string-is-a-number-with-c
 
-bool is_number(std::string s){
+bool is_number(const std::string& s){
     return !s.empty() && s.find_first_not_of("0123456789") == std::string::npos;
 };
 
