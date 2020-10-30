@@ -2,6 +2,11 @@
 #include <opencv2/core/hal/interface.h> //CV_8UC3
 #include <iostream>
 
+/*
+This function can only be used on GRAY scale image!!
+From https://stackoverflow.com/questions/31231565/countnonzero-function-gives-an-assertion-error-in-opencv
+*/
+
 int main(){
     //read in binary image, pixel values are either 0 or 255
     cv::Mat img = cv::imread("binary.png", 0);
