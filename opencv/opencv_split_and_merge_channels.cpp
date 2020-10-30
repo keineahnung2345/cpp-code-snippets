@@ -2,6 +2,7 @@
 
 //g++ opencv_split_channels.cpp `pkg-config --cflags --libs opencv`
 //https://stackoverflow.com/questions/6699374/access-to-each-separate-channel-in-opencv
+//https://stackoverflow.com/questions/23768832/how-to-copy-grayscale-image-to-rgb-images-red-channel-in-opencv
 
 int main(){
     cv::Mat img = cv::imread("xxx.jpeg");
@@ -16,6 +17,9 @@ int main(){
     ch2 = channels[1];
     ch3 = channels[2];
     std::cout << "after split, one channel's size: " << ch1.size << ", channels: " << ch1.channels() << std::endl;
+    
+    cv::Mat color;
+    cv::merge(channels, color);
 }
 
 //image size: 173 x 292, channels: 3
