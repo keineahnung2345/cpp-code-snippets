@@ -1,7 +1,12 @@
 # Eigen
 [Eigen](https://eigen.tuxfamily.org/dox/GettingStarted.html) is a C++ template library for linear algebra.
 
-## installation
+## install using apt
+```sh
+apt install -y libboost1.71-all-dev
+```
+
+## install from source
 First download `eigen-3.3.4.tar.gz`(or other newer versions) from its [gitlab repo](https://gitlab.com/libeigen/eigen/-/tree/3.3.4), and then untar it.
 
 Symlink the Eigen folder into `/usr/local/include`:
