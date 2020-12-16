@@ -1,7 +1,12 @@
 # flann
 [flann](https://github.com/mariusmuja/flann) is a library for performing fast approximate nearest neighbor searches in high dimensional spaces.
 
-## Installation
+## Install using apt
+```sh
+apt-get install -y libflann-dev
+```
+
+## Install from source
 Ref: [成功在Ubuntu 16.04環境中安裝 PCL 1.8.1 & python-pcl(Python 2.7.12 & Python 3.5.2)](https://medium.com/@ss4365gg/%E6%88%90%E5%8A%9F%E5%9C%A8ubuntu-16-04%E7%92%B0%E5%A2%83%E4%B8%AD%E5%AE%89%E8%A3%9D-pcl-1-8-1-python-pcl-a016b711bc4).
 
 First download `flann.1.9.1.tar.gz`(or other versions) from its [github repo](https://github.com/mariusmuja/flann/tree/1.9.1), and then untar it.
@@ -18,7 +23,7 @@ make
 make install
 ```
 
-## Troubleshooting
+### Troubleshooting
 
 In `cmake ..`, there could be an error: 
 
