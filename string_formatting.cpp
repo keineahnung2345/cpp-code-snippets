@@ -12,5 +12,12 @@ int main(){
     ss << hour << ":" << std::setw(2) << std::setfill('0') << minute;
     std::string str1 = ss.str();
     std::cout << str1 << std::endl; //3:01
+    
+    //formatting like python
+    std::string mystr = "My name is %s and I am %d years old.";
+    char buf[50];
+    sprintf(buf, mystr.c_str(), "Mary", 6);
+    std::cout << mystr << std::endl;
+    
     return 0;
 }
