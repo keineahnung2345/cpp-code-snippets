@@ -31,6 +31,14 @@ This solves the error:
 g++ xxx.cpp -I /usr/local/include
 ```
 
+### make
+Dry run:
+
+[How do I force make/GCC to show me the commands?](https://stackoverflow.com/questions/5820303/how-do-i-force-make-gcc-to-show-me-the-commands)
+```sh
+make -n
+```
+
 ### CMakeLists.txt
 #### fundamental
 
