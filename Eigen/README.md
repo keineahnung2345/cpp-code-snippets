@@ -20,3 +20,8 @@ ln -s /xxx/eigen-3.3.4/unsupported/ /usr/local/include/unsupported
 otherwise when we `make` `pcl`, it will shows `fatal error: unsupported/Eigen/NonLinearOptimization: No such file or directory`.
 
 Note that the arguments of `ln -s` must be full links, otherwise the target will be invalid.
+
+## install through apt
+```sh
+apt install libeigen3-dev #3.3.7-2
+```
