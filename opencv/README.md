@@ -3,6 +3,14 @@
 ## Installation
 [linux-commands/Linux packages - opencv](https://github.com/keineahnung2345/linux-commands/blob/master/Linux%20packages.md#opencv)
 
+Or install it through `apt`:
+```sh
+sudo apt install libopencv-dev
+```
+On Ubuntu 20.04, it will install OpenCV 4.2.0.
+
+Its installation path will be `/usr/include/opencv4`.
+
 ## Check version
 Check the file `<opencv_root_dir>/include/opencv2/core/version.hpp`:
 ```cpp
@@ -16,6 +24,11 @@ or according to [Find OpenCV Version Installed on Ubuntu [duplicate]](https://st
 
 ```sh
 pkg-config --modversion opencv
+```
+
+if it's installed through `apt`, you can use the binary file:
+```sh
+/usr/bin/opencv_version #4.2.0
 ```
 
 ## g++
