@@ -41,7 +41,7 @@ cmake --build .
 
 ## use it in another project
 
-```
+```cmake
 cmake_minimum_required(VERSION 3.0)
 project(MY_GRAND_PROJECT)
 
@@ -54,4 +54,8 @@ find_package(Pangolin REQUIRED)
 
 add_executable(<NAME> <NAME>.pp)
 target_link_libraries(<NAME> ${Pangolin_LIBRARIES}) 
+```
+
+```cpp
+#include <pangolin/pangolin.h>
 ```
