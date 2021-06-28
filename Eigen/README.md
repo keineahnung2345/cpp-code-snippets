@@ -23,5 +23,5 @@ Note that the arguments of `ln -s` must be full links, otherwise the target will
 
 ## install through apt
 ```sh
-apt install libeigen3-dev #3.3.7-2
+apt install libeigen3-dev #get 3.3.7-2 in Ubuntu 20.04
 ```
