@@ -38,3 +38,20 @@ cd build
 cmake ..
 cmake --build .
 ```
+
+## use it in another project
+
+```
+cmake_minimum_required(VERSION 3.0)
+project(MY_GRAND_PROJECT)
+
+find_package(Pangolin REQUIRED)
+
+#message(STATUS "Pangolin_INCLUDE_DIRS dir: ${Pangolin_INCLUDE_DIRS}")
+#message(STATUS "Pangolin_LIBRARIES dir: ${Pangolin_LIBRARIES}")
+
+#include_directories(${Pangolin_INCLUDE_DIRS})
+
+add_executable(<NAME> <NAME>.pp)
+target_link_libraries(<NAME> ${Pangolin_LIBRARIES}) 
+```
