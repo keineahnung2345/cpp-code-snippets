@@ -1,7 +1,7 @@
 # PCL
 The [Point Cloud Library (PCL)](https://github.com/PointCloudLibrary/pcl) is a standalone, large scale, open project for 2D/3D image and point cloud processing.
 
-## Installation
+## install from source
 Prerequisite: [boost](https://github.com/keineahnung2345/cpp-code-snippets/blob/master/boost/README.md), [Eigen](https://github.com/keineahnung2345/cpp-code-snippets/blob/master/Eigen/README.md), [flann](https://github.com/keineahnung2345/cpp-code-snippets/blob/master/flann/README.md) and [VTK](https://github.com/keineahnung2345/linux-commands/blob/master/Linux%20packages.md#vtk).
 ([Qhull](https://github.com/keineahnung2345/cpp-code-snippets/tree/master/qhull) is required if you want to use `pcl_surface`.)
 
@@ -29,6 +29,12 @@ vtk-8.2/vtkSmartPointer.h:113:40: error: invalid static_cast from type ‘vtkObj
 ```
 
 According to [Error building pcl::visualization](https://github.com/PointCloudLibrary/pcl/issues/2155) and [编译pcl1.9.1中出现error: ‘class vtkDataSetMapper’ has no member named ‘ImmediateModeRenderingOff‘问题的解决方法](https://blog.csdn.net/l1216766050/article/details/91346776), it can be solved by update PCL version(like 1.10.1).
+
+## install through apt
+[PCL Downloads](https://pointclouds.org/downloads/#linux)
+```sh
+sudo apt install libpcl-dev
+```
 
 ## use it in another project
 
