@@ -25,3 +25,15 @@ Note that the arguments of `ln -s` must be full links, otherwise the target will
 ```sh
 apt install libeigen3-dev #get 3.3.7-2 in Ubuntu 20.04
 ```
+
+## use it in another project
+
+```cmake
+cmake_minimum_required(VERSION 3.0)
+project(MY_GRAND_PROJECT)
+
+include_directories("/usr/include/eigen3")
+
+add_executable(...)
+target_link_libraries(...) 
+```
