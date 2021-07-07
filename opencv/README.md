@@ -63,7 +63,7 @@ collect2: error: ld returned 1 exit status
 ## cmake
 ### use OpenCV after installing
 To use OpenCV, add the following in `CMakeLists.txt`:
-```
+```cmake
 set(OpenCV_DIR /usr/local/lib)
 FIND_PACKAGE(OpenCV REQUIRED)
 message(STATUS "OpenCV library status:")
@@ -87,7 +87,7 @@ To use OpenCV without installing, we need to:
 3. copy `/usr/local/include/opencv4/opencv2` into `${PROJECT_SOURCE_DIR}/include`
 
 And then add the following in `CMakeLists.txt`:
-```
+```cmake
 # ${CMAKE_SOURCE_DIR} is the directory containing CMakeLists.txt
 link_directories(${CMAKE_SOURCE_DIR}/libs)
 set(OpenCV_LIBS "opencv_photo;opencv_videoio;opencv_imgcodecs;opencv_imgproc;opencv_dnn;opencv_calib3d;opencv_stitching;opencv_core;opencv_features2d;opencv_ml;opencv_video;opencv_flann;opencv_objdetect;opencv_highgui;opencv_gapi;opencv_superres;opencv_img_hash;opencv_bgsegm;opencv_line_descriptor;opencv_tracking;opencv_datasets;opencv_xobjdetect;opencv_face;opencv_quality;opencv_hdf;opencv_text;opencv_bioinspired;opencv_xfeatures2d;opencv_xphoto;opencv_rgbd;opencv_ximgproc;opencv_surface_matching;opencv_fuzzy;opencv_stereo;opencv_freetype;opencv_dnn_objdetect;opencv_shape;opencv_reg;opencv_hfs;opencv_videostab;opencv_saliency;opencv_dpm;opencv_structured_light;opencv_optflow;opencv_dnn_superres;opencv_aruco;opencv_sfm;opencv_plot;opencv_phase_unwrapping;opencv_ccalib")
