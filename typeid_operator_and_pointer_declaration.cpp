@@ -31,3 +31,17 @@ int main()
     
     return 0;
 }
+
+/***
+* result of MSVC compiler:
+* int * __ptr64
+* int * __ptr64
+* int * __ptr64
+* int
+* float
+* double
+* class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >
+* class std::vector<int,class std::allocator<int> >
+* class std::vector<class std::vector<int,class std::allocator<int> >,class std::allocator<class std::vector<int,class std::allocator<int> > > >
+* class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > >
+**/
