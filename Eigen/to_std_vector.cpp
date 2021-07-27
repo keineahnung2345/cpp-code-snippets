@@ -3,6 +3,8 @@
 
 #include <Eigen/Dense>
 
+//https://stackoverflow.com/questions/26094379/typecasting-eigenvectorxd-to-stdvector
+
 using namespace std;
 
 int main(int argc, char** argv) {
