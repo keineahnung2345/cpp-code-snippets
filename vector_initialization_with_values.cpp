@@ -12,5 +12,12 @@ int main() {
     std::vector<int> c(10, 1);
     std::copy(c.begin(), c.end(), std::ostream_iterator<int>(std::cout, " "));
     std::cout << std::endl;
+    //1 1 1 1 1 1 1 1 1 1 
+    
+    std::vector<std::string> vs({ "xyzzy", "plugh", "abracadabra" });
+    std::copy(vs.begin(), vs.end(), std::ostream_iterator<std::string>(std::cout, " "));
+    std::cout << std::endl;
+    //xyzzy plugh abracadabra 
+    
     return 0;
 }
