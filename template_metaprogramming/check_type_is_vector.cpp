@@ -3,7 +3,9 @@
 #include <vector>
 
 //https://stackoverflow.com/questions/16337610/how-to-know-if-a-type-is-a-specialization-of-stdvector
+//https://stackoverflow.com/questions/30468402/colon-after-struct-name-with-data-type
 
+//the colon after struct name means "inherits from"
 template<typename>
 struct is_std_vector : std::false_type {};
 
