@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+//https://stackoverflow.com/questions/19891962/c-how-to-append-a-char-to-char
+
 int main(void) {
     char* src = "hell\0";
     char* tgt = (char*)malloc(sizeof(char) *strlen(src)+2);
