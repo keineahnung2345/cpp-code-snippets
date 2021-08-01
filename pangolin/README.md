@@ -37,6 +37,7 @@ mkdir build
 cd build
 cmake ..
 cmake --build .
+sudo make install
 ```
 
 ## use it in another project
