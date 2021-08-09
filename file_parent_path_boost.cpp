@@ -4,6 +4,8 @@
 
 #include <boost/filesystem.hpp>
 
+//https://stackoverflow.com/questions/3071665/getting-a-directory-name-from-a-filename
+
 using namespace std;
 
 int main(int argc, char** argv) {
