@@ -4,6 +4,7 @@
 
 //https://stackoverflow.com/questions/16337610/how-to-know-if-a-type-is-a-specialization-of-stdvector
 //https://stackoverflow.com/questions/30468402/colon-after-struct-name-with-data-type
+//https://stackoverflow.com/questions/58694521/what-is-stdfalse-type-or-stdtrue-type
 
 //the colon after struct name means "inherits from"
 template<typename>
