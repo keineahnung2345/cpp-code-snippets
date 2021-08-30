@@ -14,7 +14,7 @@ int main() {
 }
 
 /**
-std::string is a string? 1
-int is a string? 0
-std::vector<int> is a string? 0
+std::string is a string? true
+int is a string? false
+std::vector<int> is a string? false
 **/
