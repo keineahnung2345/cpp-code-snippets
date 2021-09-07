@@ -39,6 +39,11 @@ int main(){
     long end2 = get_time();
     std::cout << "end time: " << end2 << std::endl;
     std::cout << "it takes: " << end2 - start2 << " milliseconds." << std::endl;
+    //https://www.epochconverter.com/
+    //https://stackoverflow.com/questions/5212018/how-to-make-c-cout-not-use-scientific-notation
+    //add std::fixed to not using scientific notation
+    //std::cout << "now: " << std::fixed << now << std::endl;
+    
     /*
     start time: 1571821790057
     now sleep for 4605 milliseconds.
