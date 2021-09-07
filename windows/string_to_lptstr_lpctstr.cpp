@@ -1,6 +1,10 @@
 #include <string>
 #include <iostream>
-#include <Windows.h>
+//#include <Windows.h>
+
+//for CA2CT
+#include <atlbase.h>
+#include <atlconv.h>
 
 //https://stackoverflow.com/questions/1200188/how-to-convert-stdstring-to-lpcstr
 
@@ -32,12 +36,25 @@ int main(int argc, char** argv) {
     lpc = GetWC(s.c_str());
     lp = GetWC(s.c_str());
 
+    std::cout << "=====mbstowcs=====" << std::endl;
     wprintf(L"wprintf lp: %s\n", lp);
     wprintf(L"wprintf lpc: %s\n", lpc);
 
     std::wcout << "wcout lp: " << lp << std::endl;
     std::wcout << "wcout lpc: " << lpc << std::endl;
 
+    lpc = CA2CT(s.c_str());
+    lp = CA2CT(s.c_str());
+
+    //https://stackoverflow.com/questions/3020725/char-array-to-lpctstr
+    std::cout << "=====CA2CT=====" << std::endl;
+    wprintf(L"wprintf lp: %s\n", lp);
+    wprintf(L"wprintf lpc: %s\n", lpc);
+
+    std::wcout << "wcout lp: " << lp << std::endl;
+    std::wcout << "wcout lpc: " << lpc << std::endl;
+
+    std::cout << "=====wcout L\"xxx\"=====" << std::endl;
     std::wcout << L"hello" << std::endl;
 
     return 0;
