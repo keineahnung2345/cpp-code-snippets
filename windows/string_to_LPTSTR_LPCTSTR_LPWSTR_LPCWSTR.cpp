@@ -20,6 +20,19 @@ wchar_t* GetWC(const char* c)
     return wc;
 }
 
+//https://stackoverflow.com/questions/27220/how-to-convert-stdstring-to-lpcwstr-in-c-unicode
+std::wstring s2ws(const std::string& s)
+{
+    int len;
+    int slength = (int)s.length() + 1;
+    len = MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, 0, 0);
+    wchar_t* buf = new wchar_t[len];
+    MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, buf, len);
+    std::wstring r(buf);
+    delete[] buf;
+    return r;
+}
+
 int main(int argc, char** argv) {
     std::string s("hello");
     //cout cannot be used with wcout!
@@ -32,27 +45,40 @@ int main(int argc, char** argv) {
     //lpc = (LPCTSTR)(s.c_str());
     //lp = (TCHAR*)(s.c_str());
 
+    std::cout << "=====mbstowcs=====" << std::endl;
     //should convert like this
     lpc = GetWC(s.c_str());
     lp = GetWC(s.c_str());
 
-    std::cout << "=====mbstowcs=====" << std::endl;
     wprintf(L"wprintf lp: %s\n", lp);
     wprintf(L"wprintf lpc: %s\n", lpc);
 
     std::wcout << "wcout lp: " << lp << std::endl;
     std::wcout << "wcout lpc: " << lpc << std::endl;
-
-    lpc = CA2CT(s.c_str());
-    lp = CA2CT(s.c_str());
 
     //https://stackoverflow.com/questions/3020725/char-array-to-lpctstr
     std::cout << "=====CA2CT=====" << std::endl;
+    lpc = CA2CT(s.c_str());
+    lp = CA2CT(s.c_str());
+
     wprintf(L"wprintf lp: %s\n", lp);
     wprintf(L"wprintf lpc: %s\n", lpc);
 
     std::wcout << "wcout lp: " << lp << std::endl;
     std::wcout << "wcout lpc: " << lpc << std::endl;
+
+    //https://stackoverflow.com/questions/27220/how-to-convert-stdstring-to-lpcwstr-in-c-unicode
+    std::cout << "=====MultiByteToWideChar=====" << std::endl;
+    std::wstring stemp = s2ws(s);
+    LPCWSTR lpcw = stemp.c_str();
+    //https://stackoverflow.com/questions/9825951/how-to-convert-lpcwstr-to-lpwstr/9826001
+    LPWSTR lpw = &stemp[0];
+
+    wprintf(L"wprintf lpw: %s\n", lpw);
+    wprintf(L"wprintf lpcw: %s\n", lpcw);
+
+    std::wcout << "wcout lpw: " << lpw << std::endl;
+    std::wcout << "wcout lpcw: " << lpcw << std::endl;
 
     std::cout << "=====wcout L\"xxx\"=====" << std::endl;
     std::wcout << L"hello" << std::endl;
@@ -61,9 +87,21 @@ int main(int argc, char** argv) {
 }
 
 /**
+=====mbstowcs=====
 wprintf lp: hello
 wprintf lpc: hello
 wcout lp: hello
 wcout lpc: hello
+=====CA2CT=====
+wprintf lp: hello
+wprintf lpc: hello
+wcout lp: hello
+wcout lpc: hello
+=====MultiByteToWideChar=====
+wprintf lpw: hello
+wprintf lpcw: hello
+wcout lpw: hello
+wcout lpcw: hello
+=====wcout L"xxx"=====
 hello
 **/
