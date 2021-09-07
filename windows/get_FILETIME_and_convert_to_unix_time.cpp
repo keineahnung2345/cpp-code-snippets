@@ -25,6 +25,32 @@ unsigned long long FileTimeToUnixTime(FILETIME ft) {
     return static_cast<unsigned long long>((li.QuadPart - UNIX_TIME_START) / TICKS_PER_SECOND);
 }
 
+//https://stackoverflow.com/questions/3729169/how-can-i-get-the-windows-system-time-with-millisecond-resolution
+BOOL GetLocalTimeAsFileTime(LPFILETIME ftNowLocal)
+{
+    FILETIME ftNow;
+    GetSystemTimeAsFileTime(&ftNow);
+
+    //convert to local
+    return FileTimeToLocalFileTime(&ftNow, ftNowLocal);
+}
+
+unsigned long long GetSystemTimeAsUnixTime()
+{
+    //Get the number of seconds since January 1, 1970 12:00am UTC
+    //Code released into public domain; no attribution required.
+    FILETIME ft;
+    GetSystemTimeAsFileTime(&ft); //returns ticks in UTC
+    return FileTimeToUnixTime(ft);
+}
+
+unsigned long long GetLocalTimeAsUnixTime()
+{
+    FILETIME ft;
+    GetLocalTimeAsFileTime(&ft);
+    return FileTimeToUnixTime(ft);
+}
+
 int main(int argc, char** argv) {
     //https://www.epochconverter.com/
     double now = std::chrono::duration_cast<std::chrono::seconds>(
@@ -40,9 +66,16 @@ int main(int argc, char** argv) {
     std::cout << "now unsigned long long: " << ull << std::endl;
     std::cout << "now unix time: " << ut << std::endl;
 
+    unsigned long long utcTime = GetSystemTimeAsUnixTime();
+    unsigned long long localTime = GetLocalTimeAsUnixTime();
+    std::cout << "utcTime: " << utcTime << std::endl;
+    std::cout << "localTime: " << localTime << std::endl;
+
     return 0;
 }
 
-// now: 1630986933.000000
-// now unsigned long long : 132754605333729526
-// now unix time : 1630986933
+//now: 1630993638.000000
+//now unsigned long long : 132754672385819584
+//now unix time : 1630993638
+//utcTime : 1630993638
+//localTime : 1631022438
