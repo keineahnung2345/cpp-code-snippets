@@ -79,3 +79,11 @@ int main(int argc, char** argv) {
 //now unix time : 1630993638
 //utcTime : 1630993638
 //localTime : 1631022438
+
+/*
+note:
+windows time starts from 1601/01/01
+unix time start from 1970/01/01
+so they differ by about 369 years
+(132754672385819584/10000000-1630993638)/60/60/24/365 ~= 369
+*/
