@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include <Eigen/Dense>
+#include <Eigen/Core> //Eigen::Map
 
 //https://stackoverflow.com/questions/26094379/typecasting-eigenvectorxd-to-stdvector
 //https://stackoverflow.com/questions/17036818/initialise-eigenvector-with-stdvector
@@ -18,7 +19,7 @@ int main(int argc, char** argv) {
     cout << endl;
     //1.2 3.4 5.6
     
-    mat = Eigen::Vector3f(vec.data());
+    mat = Eigen::Map<Eigen::Vector3f, Eigen::Unaligned>(vec.data(), vec.size());
     for (size_t i = 0; i < 3; ++i){
         cout << mat(i) << " ";
     }
