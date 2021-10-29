@@ -22,16 +22,4 @@ int main()
 
     p = strtok(input, delimeter);
 
-    while(p){
-        printf("%s#", p);
-        p = strtok(NULL, delimeter);
-    }
-    
-    if(p)
-        printf("%s#", p);
-    
-    return 0;
-}
 
-//abc\rd\refg                                                                                                           
-//abc#d#efg#
