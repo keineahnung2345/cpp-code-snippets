@@ -8,10 +8,6 @@ On Mac, type the following to install:
 ```sh
 npm install -g clang-format
 ```
-After installation, check help message:
-```sh
-clang-format -h
-```
 
 ### On Windows
 
@@ -20,6 +16,15 @@ Then optionally add `...\LLVM\bin` into your environment path.
 
 If you already have visual studio installed, then there should be a `clang-format.exe` in `C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\Llvm\x64\bin\clang-format.exe`.
 
+
+After installation, check help message:
+```sh
+clang-format -h
+```
+Check version:
+```sh
+clang-format -version
+```
 ## Coding style, style options
 [Clang-Format Style Options](https://clang.llvm.org/docs/ClangFormatStyleOptions.html)
 
