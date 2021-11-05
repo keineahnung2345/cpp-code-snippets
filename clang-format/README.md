@@ -20,8 +20,8 @@ Then optionally add `...\LLVM\bin` into your environment path.
 
 If you already have visual studio installed, then there should be a `clang-format.exe` in `C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\Llvm\x64\bin\clang-format.exe`.
 
-## coding style
-[Clang 10 documentation - Configurable Format Style Options](https://clang.llvm.org/docs/ClangFormatStyleOptions.html#configurable-format-style-options)
+## Coding style, style options
+[Clang-Format Style Options](https://clang.llvm.org/docs/ClangFormatStyleOptions.html)
 
 There are `LLVM`, `Google`, `Chromium`, `Mozilla`, `WebKit`, `Microsoft`.
 
