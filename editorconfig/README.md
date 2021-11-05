@@ -28,6 +28,8 @@ Edit > Advanced > Format Document (or <kbd>Ctrl</kbd>+<kbd>K</kbd>, <kbd>Ctrl</k
 
 Some C++ editorconfig examples:
 
+[My .editorconfig](https://github.com/keineahnung2345/cpp-code-snippets/blob/master/editorconfig/.editorconfig)  conform to [C++ Programming Style Guidelines](https://geosoft.no/development/cppstyle.html)
+
 [[Day-15] Editor Config自訂編輯與設定](https://ithelp.ithome.com.tw/articles/10193754)
 
 [buoto/.editorconfig](https://gist.github.com/buoto/7e2cff6c17c108658fc751df845b1040)
