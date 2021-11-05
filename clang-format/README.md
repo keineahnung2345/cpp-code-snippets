@@ -82,3 +82,17 @@ find . -regex '.*\.\(cpp\|hpp\|cu\|c\|h\)' -exec clang-format -style=file -i {} 
 
 ## Use it with VSCode
 Open each C/C++ file and press <kbd>Shift</kbd> + <kbd>Option</kbd> + <kbd>F</kbd>.
+
+## Use it with Visual Studio
+[ClangFormat Support in Visual Studio 2017](https://devblogs.microsoft.com/cppblog/clangformat-support-in-visual-studio-2017-15-7-preview-1/)
+
+Put `.clang-format` under your project root directory. 
+
+Enable clang-format:
+Go to `Tools > Options > Text Editor > C/C++ > Formatting` and check `Enable ClangFormat support`.
+
+Hot key:
+Format Document: <kbd>Ctrl</kbd> + <kbd>K</kbd>, <kbd>Ctrl</kbd> + <kbd>D</kbd>.
+Format Selection: <kbd>Ctrl</kbd> + <kbd>K</kbd>, <kbd>Ctrl</kbd> + <kbd>F</kbd>.
+
+To format all files at once, install the plugin [Format All Files](https://marketplace.visualstudio.com/items?itemName=munyabe.FormatAllFiles).
