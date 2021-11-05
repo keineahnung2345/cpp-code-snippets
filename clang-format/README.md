@@ -43,6 +43,9 @@ int formatted_code;
 void formatted_code_again;
 ```
 
+### Categorize the headers
+[How to create category for external headers in clang-format?](https://stackoverflow.com/questions/55792370/how-to-create-category-for-external-headers-in-clang-format)
+
 ## Dump config file
 
 [Format C/C++ Code Using Clang-Format](https://leimao.github.io/blog/Clang-Format-Quick-Tutorial/)
