@@ -46,6 +46,14 @@ void formatted_code_again;
 ### Categorize the headers
 [How to create category for external headers in clang-format?](https://stackoverflow.com/questions/55792370/how-to-create-category-for-external-headers-in-clang-format)
 
+### Dummy .clang-format
+
+[How to ignore files or directories with clang-format 3.9](https://stackoverflow.com/questions/50647960/how-to-ignore-files-or-directories-with-clang-format-3-9)
+
+clang-format will ignore its located directory.
+
+`SortIncludes: Never` doesn't work, it should be changed to `SortIncludes: false`.
+
 ## Dump config file
 
 [Format C/C++ Code Using Clang-Format](https://leimao.github.io/blog/Clang-Format-Quick-Tutorial/)
