@@ -101,3 +101,7 @@ Format Document: <kbd>Ctrl</kbd> + <kbd>K</kbd>, <kbd>Ctrl</kbd> + <kbd>D</kbd>.
 Format Selection: <kbd>Ctrl</kbd> + <kbd>K</kbd>, <kbd>Ctrl</kbd> + <kbd>F</kbd>.
 
 To format all files at once, install the plugin [Format All Files](https://marketplace.visualstudio.com/items?itemName=munyabe.FormatAllFiles).
+
+## Example
+
+[My .clangformat](https://github.com/keineahnung2345/cpp-code-snippets/blob/master/clang-format/.clang-format) conform to [C++ Programming Style Guidelines](https://geosoft.no/development/cppstyle.html)
