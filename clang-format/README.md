@@ -25,6 +25,19 @@ If you already have visual studio installed, then there should be a `clang-forma
 
 There are `LLVM`, `Google`, `Chromium`, `Mozilla`, `WebKit`, `Microsoft`.
 
+### Disabling Formatting on a Piece of Code
+[Disabling Formatting on a Piece of Code](https://clang.llvm.org/docs/ClangFormatStyleOptions.html#disabling-formatting-on-a-piece-of-code)
+
+Just add `// clang-format off` and `// clang-format on` around that piece of code.
+
+```cpp
+int formatted_code;
+// clang-format off
+    void    unformatted_code  ;
+// clang-format on
+void formatted_code_again;
+```
+
 ## Dump config file
 
 [Format C/C++ Code Using Clang-Format](https://leimao.github.io/blog/Clang-Format-Quick-Tutorial/)
