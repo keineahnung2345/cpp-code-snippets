@@ -107,3 +107,22 @@ int main() {
 
     return 0;
 }
+
+/**
+(1, 2), (3, 4), (5, 6)
+After std::move, p1 is null? true
+Got triangle's first point: (1, 2)
+Triangle's first point now is null? true
+(7, 8)
+Unique pointer from raw pointer: (9, 10)
+After updated: (11, 12)
+Point (11, 12) is destructed
+Unique pointer from object: (13, 14)
+Original object: (13, 14)
+Point (13, 14) is destructed
+Point (13, 14) is destructed
+Point (7, 8) is destructed
+Point (1, 2) is destructed
+Point (3, 4) is destructed
+Point (5, 6) is destructed
+**/
