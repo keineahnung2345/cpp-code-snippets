@@ -98,8 +98,8 @@ int main() {
     point_unq_ptr3.reset(nullptr);
     // the above line is equivalent to the following:
     // https://stackoverflow.com/questions/25609457/does-unique-ptrrelease-call-the-destructor/25609507
-    Point* raw = point_unq_ptr3.release();        // release
-    delete raw; // and then delete
+    Point* raw = point_unq_ptr3.release();  // release
+    delete raw;                             // and then delete
 
     // unique_ptr from object
     Point                  point(13, 14);
@@ -108,6 +108,15 @@ int main() {
               << std::endl;
     std::cout << "Original object: " << point.str()
               << std::endl;  // still exists
+
+    // https://stackoverflow.com/questions/41247630/should-i-use-make-unique-or-reset-for-already-defined-smart-pointers
+    std::unique_ptr<Point> point_unq_ptr5;
+    // this will call copy constructor?
+    // point_unq_ptr5 = std::make_unique<Point>(Point(15, 16));
+    // 15, 16 are passed to the constructor of Point
+    // following two methods both work, but prefer std::make_unique
+    point_unq_ptr5 = std::make_unique<Point>(15, 16);
+    point_unq_ptr5.reset(new Point(15, 16));
 
     return 0;
 }
@@ -123,6 +132,8 @@ After updated: (11, 12)
 Point (11, 12) is destructed
 Unique pointer from object: (13, 14)
 Original object: (13, 14)
+Point (15, 16) is destructed
+Point (15, 16) is destructed
 Point (13, 14) is destructed
 Point (13, 14) is destructed
 Point (7, 8) is destructed
