@@ -96,6 +96,10 @@ int main() {
     std::cout << "After updated: " << point_unq_ptr3->str() << std::endl;
     // release and delete the owned pointer
     point_unq_ptr3.reset(nullptr);
+    // the above line is equivalent to the following:
+    // https://stackoverflow.com/questions/25609457/does-unique-ptrrelease-call-the-destructor/25609507
+    Point* raw = point_unq_ptr3.release();        // release
+    delete raw; // and then delete
 
     // unique_ptr from object
     Point                  point(13, 14);
