@@ -35,6 +35,13 @@ public:
         : value_(value == INVALID_HANDLE_VALUE ? nullptr : value) {}
     explicit    operator bool() const { return value_ != nullptr; };
                 operator HANDLE() const { return value_; };
+    /**
+    friend:
+    https://www.geeksforgeeks.org/friend-class-function-cpp/
+    meaning the global functions "bool operator==(WinHandle l, WinHandle r)" and
+    "bool operator!=(WinHandle l, WinHandle r)" can access WinHandle's
+    protected/private members
+    */
     friend bool operator==(WinHandle l, WinHandle r);
     friend bool operator!=(WinHandle l, WinHandle r);
     struct Deleter {
