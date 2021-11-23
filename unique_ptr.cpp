@@ -131,6 +131,7 @@ int main() {
     }
     
     // unique_ptr from raw pointer
+    // https://stackoverflow.com/questions/12403750/initializing-a-stdunique-ptr-by-passing-the-address-of-the-pointer
     std::unique_ptr<Point> point_unq_ptr6 = std::unique_ptr<Point>(createRawPtr());
     std::cout << "From raw pointer: " << point_unq_ptr6->str() << std::endl;
 
