@@ -118,6 +118,14 @@ int main() {
     point_unq_ptr5 = std::make_unique<Point>(15, 16);
     point_unq_ptr5.reset(new Point(15, 16));
 
+    std::vector<std::unique_ptr<Point>> points;
+    points.push_back(std::make_unique<Point>(17, 18));
+    points.push_back(std::make_unique<Point>(19, 20));
+    std::cout << "vector of Point: " << std::endl;
+    for(const std::unique_ptr<Point>& p : points) {
+        std::cout << p->str() << std::endl;
+    }
+
     return 0;
 }
 
@@ -133,6 +141,11 @@ Point (11, 12) is destructed
 Unique pointer from object: (13, 14)
 Original object: (13, 14)
 Point (15, 16) is destructed
+vector of Point:
+(17, 18)
+(19, 20)
+Point (17, 18) is destructed
+Point (19, 20) is destructed
 Point (15, 16) is destructed
 Point (13, 14) is destructed
 Point (13, 14) is destructed
