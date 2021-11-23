@@ -62,6 +62,10 @@ std::unique_ptr<Point> createUniquePtr() {
                // return std::move(p); // works!
 }
 
+Point* createRawPtr(){
+	return new Point(0, 0);
+}
+
 int main() {
     // create unique_ptr
     std::unique_ptr<Point> p1(new Point(1, 2)), p2(new Point(3, 4)),
@@ -125,6 +129,10 @@ int main() {
     for(const std::unique_ptr<Point>& p : points) {
         std::cout << p->str() << std::endl;
     }
+    
+    // unique_ptr from raw pointer
+    std::unique_ptr<Point> point_unq_ptr6 = std::unique_ptr<Point>(createRawPtr());
+    std::cout << "From raw pointer: " << point_unq_ptr6->str() << std::endl;
 
     return 0;
 }
@@ -141,9 +149,11 @@ Point (11, 12) is destructed
 Unique pointer from object: (13, 14)
 Original object: (13, 14)
 Point (15, 16) is destructed
-vector of Point:
+vector of Point: 
 (17, 18)
 (19, 20)
+(0, 0)
+Point (0, 0) is destructed
 Point (17, 18) is destructed
 Point (19, 20) is destructed
 Point (15, 16) is destructed
