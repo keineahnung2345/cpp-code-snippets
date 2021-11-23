@@ -48,6 +48,13 @@ public:
     };
 };
 
+/**
+Why putting inline function definitions in header?
+https://stackoverflow.com/questions/5057021/why-are-c-inline-functions-in-the-header
+Because of the one definition rule (ODR) for inline functions, an identical
+definition for the function must exist in every translation unit that uses it.
+The easiest way to achieve this is by putting the definition in a header file.
+*/
 inline bool operator==(HANDLE l, WinHandle r) {
     return WinHandle(l) == r;
 }
