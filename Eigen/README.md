@@ -37,3 +37,14 @@ include_directories("/usr/include/eigen3")
 add_executable(...)
 target_link_libraries(...) 
 ```
+
+## check version
+[How to check the version number of Eigen C++ template library?](https://stackoverflow.com/questions/21497064/how-to-check-the-version-number-of-eigen-c-template-library)
+
+Open `$(eigen_installation_dir)/eigen3/Eigen/src/Core/util` and find `EIGEN_WORLD_VERSION`, `EIGEN_MAJOR_VERSION`, `EIGEN_MINOR_VERSION` like:
+
+```cpp
+#define EIGEN_WORLD_VERSION 3
+#define EIGEN_MAJOR_VERSION 3
+#define EIGEN_MINOR_VERSION 7
+```
