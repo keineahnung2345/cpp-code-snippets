@@ -36,10 +36,12 @@ void speedTest() {
         int times = 100000;
 
         auto start_total = std::chrono::system_clock::now();
-        auto start_raw   = std::chrono::system_clock::now();
+        std::chrono::system_clock::time_point start_raw;
         std::chrono::system_clock::time_point created_raw;
+        std::chrono::system_clock::time_point end_raw;
         {
             std::vector<YourClass*> yourClasses(times);
+            start_raw = std::chrono::system_clock::now();
 
             for(size_t i = 0; i < times; ++i) {
                 yourClasses[i] = new YourClass();
@@ -49,8 +51,8 @@ void speedTest() {
             for(size_t i = 0; i < times; ++i) {
                 delete yourClasses[i];
             }
+            end_raw = std::chrono::system_clock::now();
         }
-        auto end_raw = std::chrono::system_clock::now();
         auto diff_create_raw =
             std::chrono::duration_cast<std::chrono::microseconds>(created_raw -
                                                                   start_raw);
@@ -60,19 +62,21 @@ void speedTest() {
                   << std::endl;
         ps_file << diff_create_raw.count() << "," << diff_raw.count() << ",";
 
-        auto start_unique = std::chrono::system_clock::now();
+        std::chrono::system_clock::time_point start_unique;
         std::chrono::system_clock::time_point created_unique;
+        std::chrono::system_clock::time_point end_unique;
         {
             std::vector<std::unique_ptr<YourClass>> yourClasses(times);
+            start_unique = std::chrono::system_clock::now();
 
             for(size_t i = 0; i < times; ++i) {
-                yourClasses[i] =
-                    std::make_unique<YourClass>();
+                yourClasses[i] = std::make_unique<YourClass>();
             }
 
             created_unique = std::chrono::system_clock::now();
+            yourClasses.clear();
+            end_unique = std::chrono::system_clock::now();
         }
-        auto end_unique = std::chrono::system_clock::now();
         auto diff_create_unique =
             std::chrono::duration_cast<std::chrono::microseconds>(
                 created_unique - start_unique);
@@ -84,18 +88,21 @@ void speedTest() {
         ps_file << diff_create_unique.count() << "," << diff_unique.count()
                 << ",";
 
-        auto start_shared = std::chrono::system_clock::now();
+        std::chrono::system_clock::time_point start_shared;
         std::chrono::system_clock::time_point created_shared;
+        std::chrono::system_clock::time_point end_shared;
         {
             std::vector<std::shared_ptr<YourClass>> yourClasses(times);
 
+            start_shared = std::chrono::system_clock::now();
             for(size_t i = 0; i < times; ++i) {
                 yourClasses[i] =
                     std::make_shared<YourClass>();
             }
             created_shared = std::chrono::system_clock::now();
+            yourClasses.clear();
+            end_shared = std::chrono::system_clock::now();
         }
-        auto end_shared = std::chrono::system_clock::now();
         auto diff_create_shared =
             std::chrono::duration_cast<std::chrono::microseconds>(
                 created_shared - start_shared);
@@ -107,18 +114,21 @@ void speedTest() {
         ps_file << diff_create_shared.count() << "," << diff_shared.count()
                 << ",";
 
-        auto start_obj = std::chrono::system_clock::now();
+        std::chrono::system_clock::time_point start_obj;
         std::chrono::system_clock::time_point created_obj;
+        std::chrono::system_clock::time_point end_obj;
         {
             std::vector<YourClass> yourClasses;
             yourClasses.reserve(times);
+            start_obj = std::chrono::system_clock::now();
 
             for(size_t i = 0; i < times; ++i) {
                 yourClasses.emplace_back();
             }
             created_obj = std::chrono::system_clock::now();
+            yourClasses.clear();
+            end_obj = std::chrono::system_clock::now();
         }
-        auto end_obj = std::chrono::system_clock::now();
         auto diff_create_obj =
             std::chrono::duration_cast<std::chrono::microseconds>(created_obj -
                                                                   start_obj);
