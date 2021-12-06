@@ -4,14 +4,16 @@
 #include <vector>
 #include <fstream>
 
-class YourClass {
+class Class1 {
 private:
     std::string s;
     int         i;
     float       f;
 };
 
-int main(int argc, char** argv) {
+#define YourClass Class1
+
+void speedTest() {
     std::ofstream ps_file("../../pointer_speed.csv");
     ps_file << "raw create"
             << ","
@@ -37,15 +39,15 @@ int main(int argc, char** argv) {
         auto start_raw   = std::chrono::system_clock::now();
         std::chrono::system_clock::time_point created_raw;
         {
-            std::vector<YourClass*> params(times);
+            std::vector<YourClass*> yourClasses(times);
 
             for(size_t i = 0; i < times; ++i) {
-                params[i] = new YourClass();
+                yourClasses[i] = new YourClass();
             }
             created_raw = std::chrono::system_clock::now();
 
             for(size_t i = 0; i < times; ++i) {
-                delete params[i];
+                delete yourClasses[i];
             }
         }
         auto end_raw = std::chrono::system_clock::now();
@@ -61,10 +63,10 @@ int main(int argc, char** argv) {
         auto start_unique = std::chrono::system_clock::now();
         std::chrono::system_clock::time_point created_unique;
         {
-            std::vector<std::unique_ptr<YourClass>> params(times);
+            std::vector<std::unique_ptr<YourClass>> yourClasses(times);
 
             for(size_t i = 0; i < times; ++i) {
-                params[i] =
+                yourClasses[i] =
                     std::make_unique<YourClass>();
             }
 
@@ -85,10 +87,10 @@ int main(int argc, char** argv) {
         auto start_shared = std::chrono::system_clock::now();
         std::chrono::system_clock::time_point created_shared;
         {
-            std::vector<std::shared_ptr<YourClass>> params(times);
+            std::vector<std::shared_ptr<YourClass>> yourClasses(times);
 
             for(size_t i = 0; i < times; ++i) {
-                params[i] =
+                yourClasses[i] =
                     std::make_shared<YourClass>();
             }
             created_shared = std::chrono::system_clock::now();
@@ -108,10 +110,11 @@ int main(int argc, char** argv) {
         auto start_obj = std::chrono::system_clock::now();
         std::chrono::system_clock::time_point created_obj;
         {
-            std::vector<YourClass> params;
+            std::vector<YourClass> yourClasses;
+            yourClasses.reserve(times);
 
             for(size_t i = 0; i < times; ++i) {
-                params.push_back(YourClass());
+                yourClasses.emplace_back();
             }
             created_obj = std::chrono::system_clock::now();
         }
@@ -132,5 +135,9 @@ int main(int argc, char** argv) {
         ps_file << diff_total.count() << std::endl;
     }
     ps_file.close();
+}
+
+int main(int argc, char** argv) {
+    speedTest();
     return 0;
 }
