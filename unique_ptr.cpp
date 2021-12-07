@@ -134,6 +134,11 @@ int main() {
     // https://stackoverflow.com/questions/12403750/initializing-a-stdunique-ptr-by-passing-the-address-of-the-pointer
     std::unique_ptr<Point> point_unq_ptr6 = std::unique_ptr<Point>(createRawPtr());
     std::cout << "From raw pointer: " << point_unq_ptr6->str() << std::endl;
+    
+    // unique_ptr for array
+    // https://stackoverflow.com/questions/21377360/proper-way-to-create-unique-ptr-that-holds-an-allocated-array/21377382
+    std::unique_ptr<int[]> array_unq_ptr1(new int[30]());
+    std::unique_ptr<int[]> array_unq_ptr2 = std::make_unique<int[]>(30);
 
     return 0;
 }
