@@ -1,9 +1,11 @@
 #include <iostream>
 #include <mutex>
+#include <shared_mutex>
 #include <thread>
 #include <vector>
 
 // https://shengyu7697.github.io/std-atomic/
+// https://zh.wikipedia.org/wiki/%E8%AF%BB%E5%86%99%E9%94%81
 
 class Candidate {
 public:
@@ -11,6 +13,7 @@ public:
     {
         NONE = 0,
         MUTEX,
+        READ_WRITE_LOCK,
         ATOMIC
     };
 
@@ -18,36 +21,46 @@ public:
 
     void increase() {
         switch(mode) {
-            case 0:
+            case NONE:
                 votes++;
                 break;
-            case 1:
+            case MUTEX:
                 increaseMutex();
                 break;
-            case 2:
+            case READ_WRITE_LOCK:
+                increaseReadWriteLock();
+                break;
+            case ATOMIC:
                 votes_atomic++;
+                break;
         }
     }
 
     void decrease() {
         switch(mode) {
-            case 0:
+            case NONE:
                 votes--;
                 break;
-            case 1:
+            case MUTEX:
                 decreaseMutex();
                 break;
-            case 2:
+            case READ_WRITE_LOCK:
+                decreaseReadWriteLock();
+                break;
+            case ATOMIC:
                 votes_atomic--;
         }
     }
 
     int getVotes() {
         switch(mode) {
-            case 0:
-            case 1:
+            case NONE:
                 return votes;
-            case 2:
+            case MUTEX:
+                return getVotesMutex();
+            case READ_WRITE_LOCK:
+                return getVotesReadWriteLock();
+            case ATOMIC:
                 return votes_atomic;
         }
     }
@@ -63,10 +76,31 @@ private:
         votes--;
     }
 
-    Mode               mode;
-    int                votes;
-    std::atomic<int>   votes_atomic;
-    mutable std::mutex mtx;
+    int getVotesMutex() {
+        std::lock_guard<std::mutex> lck(mtx);
+        return votes;
+    }
+
+    void increaseReadWriteLock() {
+        std::unique_lock lck(shared_mtx);
+        votes++;
+    }
+
+    void decreaseReadWriteLock() {
+        std::unique_lock lck(shared_mtx);
+        votes--;
+    }
+
+    int getVotesReadWriteLock() {
+        std::shared_lock lck(shared_mtx);
+        return votes;
+    }
+
+    Mode                      mode;
+    int                       votes;
+    std::atomic<int>          votes_atomic;
+    mutable std::mutex        mtx;
+    mutable std::shared_mutex shared_mtx;
 };
 
 void upvote(Candidate* cand) {
@@ -87,7 +121,7 @@ int main() {
 
     std::chrono::duration<double, std::milli> elapsed;
 
-    for(size_t m = 0; m < 3; ++m) {
+    for(size_t m = 0; m < 4; ++m) {
         Candidate* cand = new Candidate(m);
 
         auto start = std::chrono::high_resolution_clock::now();
@@ -114,10 +148,12 @@ int main() {
 }
 
 /*
-result: 248590
-total: 217.507 ms
+result: 22884
+total: 231.166 ms
 result: 0
-total: 712.404 ms
+total: 549.761 ms
 result: 0
-total: 525.8 ms
+total: 570.361 ms
+result: 0
+total: 424.163 ms
 */
