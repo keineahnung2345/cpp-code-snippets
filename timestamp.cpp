@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
- 
+
+// https://stackoverflow.com/questions/997946/how-to-get-current-time-and-date-in-c
+
 std::string get_timestamp() {
     time_t now = time(NULL);
     struct tm* ltm = localtime(&now);
