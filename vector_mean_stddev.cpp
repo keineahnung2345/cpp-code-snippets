@@ -4,6 +4,8 @@
 #include <numeric> // accumulate
 #include <algorithm> // transform, inner_product
 
+// https://stackoverflow.com/questions/7616511/calculate-mean-and-standard-deviation-from-a-vector-of-samples-in-c-using-boos
+
 void calculateMinMaxAvgStddev(const std::vector<float>& v, float& min_,
                               float& max_, float& avg, float& stddev) {
     min_ = *std::min_element(v.begin(), v.end());
