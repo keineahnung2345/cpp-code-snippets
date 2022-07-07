@@ -3,6 +3,11 @@
 #include <sstream>
 #include <string>
 
+// https://stackoverflow.com/questions/12133379/c-using-ifstream-with-getline
+// https://stackoverflow.com/questions/16446665/c-read-from-csv-file
+// https://stackoverflow.com/questions/1120140/how-can-i-read-and-parse-csv-files-in-c
+// https://cplusplus.com/reference/string/string/getline/
+
 int main() {
     std::string fname = "abc.csv";
 
