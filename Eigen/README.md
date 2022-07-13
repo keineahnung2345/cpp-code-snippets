@@ -41,10 +41,12 @@ target_link_libraries(...)
 ## check version
 [How to check the version number of Eigen C++ template library?](https://stackoverflow.com/questions/21497064/how-to-check-the-version-number-of-eigen-c-template-library)
 
-Open `$(eigen_installation_dir)/eigen3/Eigen/src/Core/util` and find `EIGEN_WORLD_VERSION`, `EIGEN_MAJOR_VERSION`, `EIGEN_MINOR_VERSION` like:
+Open `$(eigen_installation_dir)/eigen3/Eigen/src/Core/util/Macros.h` and find `EIGEN_WORLD_VERSION`, `EIGEN_MAJOR_VERSION`, `EIGEN_MINOR_VERSION` like:
 
 ```cpp
 #define EIGEN_WORLD_VERSION 3
 #define EIGEN_MAJOR_VERSION 3
 #define EIGEN_MINOR_VERSION 7
 ```
+
+Note: PCL 1.11.1 uses Eigen 3.3.7, PCL 1.12.1 uses Eigen 3.4.0
