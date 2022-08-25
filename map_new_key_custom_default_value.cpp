@@ -2,6 +2,9 @@
 #include <map>
 
 // https://stackoverflow.com/questions/2333728/stdmap-default-value
+// https://www.learncpp.com/cpp-tutorial/overloading-the-assignment-operator/
+// https://www.tutorialspoint.com/cplusplus/input_output_operators_overloading.htm
+// https://stackoverflow.com/questions/10744787/operator-must-take-exactly-one-argument
 
 struct IntWithDefaultValue {
     int  i = -1;
