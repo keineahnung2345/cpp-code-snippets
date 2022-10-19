@@ -17,6 +17,12 @@ int main(){
         std::cout << myvec[i] << " ";
     }
     std::cout << std::endl;
+    
+    myvec = {1,3,6,2,9,5};
+    n = 1;
+    std::nth_element(myvec.begin(), myvec.begin()+n, myvec.end(), std::greater<int>());
+    std::cout << "The largest element is " << myvec[0] << '\n';
+    std::cout << "The second largest element is " << myvec[1] << '\n';
     return 0;
 }
 
