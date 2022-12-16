@@ -1,5 +1,18 @@
 # thread
 
+## Run a non-blocking process
+
+[Asynchronous CreateProcess?](https://stackoverflow.com/questions/7507975/asynchronous-createprocess)
+
+Just put that process into anoter thread.
+
+```cpp
+std::thread t([](std::string sApplicationName, std::string sCommandLine) {
+    startup(NULL, charToWchart(sCommandLine.c_str()).get());
+}, std::string(""), exe_path);
+t.detach();
+```
+
 ## 'invoke': no matching overloaded function found
 
 Trying to run this function:
