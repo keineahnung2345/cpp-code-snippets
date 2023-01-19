@@ -36,6 +36,28 @@ Dry run:
 make -n
 ```
 
+Install dry run:
+
+[What's the opposite of 'make install', i.e. how do you uninstall a library in Linux?](https://stackoverflow.com/questions/1439950/whats-the-opposite-of-make-install-i-e-how-do-you-uninstall-a-library-in-li)
+```sh
+make -n install
+```
+
+make clean:
+
+removes any intermediate or output files from your source / build tree. However, it only affects the source / build tree; it does not touch the rest of the filesystem and so will not remove previously installed software.
+
+```sh
+make clean
+```
+
+make uninstall:
+
+```sh
+make uninstall
+```
+But it's up to the library's authors to provide this.
+
 ### CMakeLists.txt
 #### fundamental
 
