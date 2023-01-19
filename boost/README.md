@@ -17,7 +17,7 @@ find /usr -name pyconfig.h
 
 First download `boost_1_xx_0.tar.gz` from https://www.boost.org/users/history/, and unzip it.
 
-Check what libraries boost contains:
+Check what libraries boost contains. Or go to [boost libraries](https://www.boost.org/doc/libs/1_81_0/libs/libraries.htm).
 ```sh
 ./bootstrap.sh --show-libraries
 ```
