@@ -15,6 +15,7 @@ unsigned long long getUnixTime(std::chrono::system_clock::time_point p0 =
         .count();
 }
 
+// https://stackoverflow.com/questions/21021388/how-to-parse-a-date-string-into-a-c11-stdchrono-time-point-or-similar
 unsigned long long timestamp2UnixTime(std::string timestamp) {
     std::tm           timeinfo = {};
     std::stringstream ss(timestamp);
