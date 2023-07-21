@@ -2,6 +2,8 @@
 
 #include <Eigen/Dense>
 
+// https://stackoverflow.com/questions/2573726/how-to-use-boostcrc
+// https://stackoverflow.com/questions/5100718/integer-to-hex-string-in-c
 std::string getCrc32(const std::string& str) {
     boost::crc_32_type result;
     result.process_bytes(str.data(), str.length());
