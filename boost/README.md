@@ -2,6 +2,8 @@
 boost contains sorts of functions, including uuid.
 
 ## installation
+
+### Linux
 Prerequisite: `python3-dev`:
 ```sh
 apt-get install -y python3-dev
@@ -40,6 +42,17 @@ Finally install:
 ```sh
 ./b2 install
 ```
+
+### Windows
+
+Download `boost_1_xx_0.zip` and unzip it to `C:\Program Files\Boost\boost_1_xx_0` or `C:\Program Files (x86)\Boost\boost_1_xx_0` and then in that directory, open `Developer Command Prompt for VS 2019`, run it as Administrator:
+
+```bat
+bootstrap.bat
+.\b2
+```
+
+Then in `C:\Program Files\Boost\boost_1_xx_0\stage\lib` or `C:\Program Files (x86)\Boost\boost_1_xx_0\stage\lib` there will be libraries looking like `libboost_xxx-x64-1_xx.lib` or `libboost_xxx-x32-1_xx.lib`.
 
 ## use it in another project
 In CMakeLists.txt(adopted from https://github.com/ipkn/crow/blob/master/CMakeLists.txt):
