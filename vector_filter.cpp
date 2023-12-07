@@ -15,6 +15,7 @@ int main() {
         std::cout << ele << " ";
     }
     std::cout << std::endl;
+    // 3 4 5 6
     v.erase(std::remove_if(v.begin(), v.end(),
                            [](float ele) { return ele < 3 || ele > 6; }),
             v.end());
@@ -23,5 +24,6 @@ int main() {
         std::cout << ele << " ";
     }
     std::cout << std::endl;
+    // 3 4 5 6
     return 0;
 }
