@@ -5,6 +5,7 @@
 
 //https://stackoverflow.com/questions/29200635/convert-float-to-string-with-precision-number-of-decimal-digits-specified
 //http://www.cplusplus.com/reference/string/stoi/
+//https://stackoverflow.com/questions/3850558/how-to-check-to-ensure-you-have-an-integer-before-calling-atoi
 
 //g++ string_to_number.cpp -std=c++11
 
@@ -30,6 +31,26 @@ int main(){
     //to long
     std::string sl = "1234567890123456";
     std::cout << std::stol(sl) << std::endl; //1234567890123456
+
+    // when string is not guaranteed to be convertible
+    char*       pEnd;
+    std::string s   = "123";
+    long        num = strtol(s.c_str(), &pEnd, 10);
+
+    if(*pEnd == '\0')
+        std::cout << "Convert " << s << " to " << num << " successfully!\n";
+    else
+        std::cout << "Cannot convert " << s << " to number\n";
+    // Convert 123 to 123 successfully!
+
+    s   = "abc123";
+    num = strtol(s.c_str(), &pEnd, 10);
+
+    if(*pEnd == '\0')
+        std::cout << "Convert " << s << " to " << num << " successfully!\n";
+    else
+        std::cout << "Cannot convert " << s << " to number\n";
+    // Cannot convert abc123 to number
 
     return 0;
 }
