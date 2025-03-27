@@ -7,10 +7,20 @@
 
 int main(){
     std::ifstream in("xxx.txt");
+
+    // this only works if there is no whitespace
+    // in >> content;
     
     // Method 1
     std::string content1((std::istreambuf_iterator<char>(in)), 
         std::istreambuf_iterator<char>());
+
+    /**
+    same as
+    std::string content1;
+    content1.assign((std::istreambuf_iterator<char>(in)), 
+        std::istreambuf_iterator<char>());
+    **/
     
     // Method 2
     std::stringstream ss;
